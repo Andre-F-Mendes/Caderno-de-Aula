@@ -1,21 +1,15 @@
 public class Carro {
-    private String nome;
+    private final String nome;
     private int marcha;
     private double velocidade;
     private boolean ligado;
 
-    public Carro(){
+    
+    public Carro(String nome){
+        this.nome = nome;
         this.ligado = false;
         this.velocidade = 0;
         this.marcha = 0;
-    }
-    public Carro(String nome){
-        this();
-        this.nome = nome;
-    }
-    
-    public void setnome(String nome){
-        this.nome = nome;
     }
     public String getnome(){
         return this.nome;
