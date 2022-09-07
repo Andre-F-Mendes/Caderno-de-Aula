@@ -1,3 +1,4 @@
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -19,9 +20,24 @@ public class Playlist{
         this.listaMusicas.add(musica);
         
     }
-
     public Musica getMusica(int pos){
         return this.listaMusicas.get(pos);
+    }
+    public Musica removeMusica(int pos){
+        Musica musicaRemovida = this.listaMusicas.get(pos);
+        this.listaMusicas.remove(pos);
+        return musicaRemovida;
+    }
+    public String tocaMusica(int pos){
+        this.listaMusicas.get(pos).reproduz();
+        return listaMusicas.get(pos).getTitulo();
+    }
+    public Duration getDuracao(){
+        int soma = 0;
+        for(int i = 0; i < this.listaMusicas.size(); i++){
+            soma += this.listaMusicas.get(i).getDuration().toSecondsPart();
+        }
+        return Duration.ofSeconds(soma);
     }
 
 

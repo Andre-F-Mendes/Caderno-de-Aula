@@ -18,8 +18,15 @@ public class PlaylistTeste {
 
         System.out.println(playlist1.getMusica(0));
 
+        playlist1.addMusica(musica2);
 
+        System.out.println(playlist1.getMusica(1));
+        
+        System.out.println(playlist1.removeMusica(0));
 
+        System.out.println(playlist1.tocaMusica(0));
+
+        System.out.println(playlist1.getDuracao().getSeconds());
 
     }
 }
