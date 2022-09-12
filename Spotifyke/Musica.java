@@ -1,3 +1,4 @@
+package Spotifyke;
 //André
 import java.time.Duration;
 import java.util.Objects;

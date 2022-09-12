@@ -1,3 +1,4 @@
+package Spotifyke;
 import java.time.Duration;
 
 public class MusicaTesta {
