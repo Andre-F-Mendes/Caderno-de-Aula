@@ -1,7 +1,6 @@
 package Spotifyke;
+//André
 import java.time.Duration;
-
-import javax.swing.plaf.synth.SynthSpinnerUI;
 
 public class PlaylistTeste {
     public static void main(String[] args) {

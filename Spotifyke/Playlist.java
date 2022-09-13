@@ -1,4 +1,5 @@
 package Spotifyke;
+//André
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Objects;
@@ -38,7 +39,7 @@ public class Playlist{
         //cria int com valor aleatorio de 0 a 1 multiplicado pelo tamanho da playlist
         //porem o valor é transformado em int
         int numeroAletatorio = (int)(Math.random() * listaMusicas.size());
-
+        this.listaMusicas.get(numeroAletatorio).reproduz();
         return this.listaMusicas.get(numeroAletatorio).getTitulo();
     }
     public Duration getDuracao(){
@@ -51,9 +52,9 @@ public class Playlist{
 
     @Override
     public String toString(){
-       if(this.listaMusicas.size() == 0){
+       if(this.listaMusicas.size() == 1){
         String retorno = "\nPlaylist |" + this.titulo + "|\n" + this.listaMusicas.size() + " música" + ", tempo: " + 
-        String.format(" %dmin%02ds", this.getDuracao().toMinutesPart(), this.getDuracao().toSecondsPart());
+        String.format(" %dh%dmin%02ds", this.getDuracao().toHoursPart(), this.getDuracao().toMinutesPart(), this.getDuracao().toSecondsPart());
         for(int i = 0; i < this.listaMusicas.size(); i++){
             retorno += "\n" + (i+1) + "- " + this.listaMusicas.get(i);
         }
@@ -61,7 +62,7 @@ public class Playlist{
         return retorno;
        }else{
         String retorno = "\nPlaylist |" + this.titulo + "|\n" + this.listaMusicas.size() + " músicas" + ", tempo: " + 
-        String.format(" %dmin%02ds", this.getDuracao().toMinutesPart(), this.getDuracao().toSecondsPart()) + "\n_-Músicas na playlist-_";
+        String.format(" %dh%dmin%02ds", this.getDuracao().toHoursPart(), this.getDuracao().toMinutesPart(), this.getDuracao().toSecondsPart()) + "\n_-Músicas na playlist-_";
         for(int i = 0; i < this.listaMusicas.size(); i++){
             retorno += "\n" + (i+1) + "- " + this.listaMusicas.get(i);
 
