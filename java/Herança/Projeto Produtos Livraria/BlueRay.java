@@ -1,4 +1,3 @@
-package ProjetoLivraria;
 
 import java.time.Duration;
 import java.util.Objects;
