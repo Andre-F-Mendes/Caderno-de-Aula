@@ -1,4 +1,3 @@
-package Herança;
 
 import java.time.Duration;
 import java.util.Objects;

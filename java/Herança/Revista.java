@@ -1,4 +1,3 @@
-package Herança;
 
 import java.util.Objects;
 
