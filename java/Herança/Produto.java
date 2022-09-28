@@ -14,9 +14,8 @@ public class Produto {
         this.nome = nome;
         this.preco = preco;
     }
-
     @Override
     public String toString(){
-        return nome + " " + preco;
+        return "Nome: " + this.nome + "\nPreço: " + this.preco;
     }
 }

@@ -13,8 +13,9 @@ public class Livro extends Produto{
         Objects.requireNonNull(editora, "editora não pode ser nulo");
         this.autorPrincipal = autorPrincipal;
         this.editora = editora;
-
     }
-    
-
+    @Override
+    public String toString(){
+        return super.toString() + "\nAutor: " + this.autorPrincipal + "\nEditora: " + this.editora;
+    }
 }

@@ -16,7 +16,7 @@ public class MusicaTesta {
         //true
         System.out.println(musica1.getReproducoes() == 2);
         //false
-        System.out.println(musica1.getTitulo().equals(musica2) == false);
+        System.out.println(musica1.getTitulo().equals(musica2.getTitulo())== false);
         //true
         System.out.println(musica1.getDuration().getSeconds() == 273);
         
