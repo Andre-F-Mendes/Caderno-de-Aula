@@ -2,8 +2,11 @@ package Herança;
 
 
 public class TesteProduto {
-    Produto p = new Produto(null, 2);
+    public static void main(String[] args) {
+        Produto p1 = new Produto(null, 2);
 
-    
+        System.out.println(p1.toString());
 
+
+    }
 }
