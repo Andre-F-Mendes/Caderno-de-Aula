@@ -1,3 +1,4 @@
+package Animais;
 public class Gato extends Animal{
     
     public Gato(String nome){
@@ -5,6 +6,6 @@ public class Gato extends Animal{
     }
     @Override
     public String seComunica(){
-        
+        return "maiu";
     }
 }
