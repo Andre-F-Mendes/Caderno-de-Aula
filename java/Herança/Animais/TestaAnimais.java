@@ -1,27 +1,37 @@
 package Animais;
+import java.util.ArrayList;
+
 public class TestaAnimais {
     public static void main(String[] args) {
-        Animal cachorro = new Cachorro("Dog");
-        Animal gato = new Gato("Cat");
-        Animal pato = new Pato("Duck");
+        var animais = new ArrayList<Animal>();
+        
+        Animal cachorro = new Cachorro("Lilica");
+        Animal cachorro1 = new Cachorro("Doris");
+        Animal gato1 = new Gato("Café");
+        Animal pato1 = new Pato("Kovisk");
         Animal humano = new Humano("André");
-        Gato gato1 = new Gato("Gatonsio");
-        Cachorro cachorro1 = new Cachorro("Caramelo");
-        Pato pato1 = new Pato("Patonsio");
-        Humano humano1 = new Humano("Kratus");
+        Animal humano1 = new Humano("Lune");
+        //Animal gato2 = new Gato(null);
+        //Animal cachorro2 = new Cachorro(null);
+        //Animal pato2 = new Pato(null);
+        //Animal humano2 = new Humano(null);
+        
+        animais.add(cachorro);
+        animais.add(cachorro1);
+        animais.add(gato1);
+        animais.add(pato1);
+        animais.add(humano);
+        animais.add(humano1);
+        
 
-        //Objeto como animal instanciado como o tipo
-        System.out.println(gato.getNome());
-        System.out.println(cachorro.getNome());
-        System.out.println(pato.getNome());
-        System.out.println(humano.getNome());
+        for(Animal animais1 : animais){
+            if(animais1 instanceof Humano){
+                break;
+            }else{
+                System.out.println(animais1.getNome() + " - " + animais1.seComunica());
+            } 
+        }
 
-        //Objeto como o tipo instanciado como o tipo
-        System.out.println("---------");
-        System.out.println(gato1.getNome());
-        System.out.println(cachorro1.getNome());
-        System.out.println(pato1.getNome());
-        System.out.println(humano1.getNome());
 
     }
 }

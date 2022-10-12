@@ -6,6 +6,6 @@ public class Humano extends Animal {
     }
     @Override
     public String seComunica(){
-        return "Olá, eu sou o" + super.getNome() + "! Tudo bem?";
+        return "Olá, eu sou o " + super.getNome() + "! Tudo bem?";
     }
 }

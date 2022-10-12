@@ -6,6 +6,6 @@ public class Gato extends Animal{
     }
     @Override
     public String seComunica(){
-        return "maiu";
+        return "miau";
     }
 }
