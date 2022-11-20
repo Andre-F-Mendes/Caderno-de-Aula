@@ -3,37 +3,21 @@ package MenuRPG;
 import java.util.Objects;
 
 public abstract class Pessoa {
-    private final String nome;
-    private final int nivel, idade;
-    private double tamanho;
+    private int forc, des, con, inte, sab, car;
+    private final String nomeJogador, nomePersonagem;
+    private int idade = 0, nivel = 0;
+    private String tamanho;
 
-    public Pessoa(String nome, int idade, double tamanho, int nivel){
+    public Pessoa(String nomeJogador, String nomePersonagem, String tamanho, int idade, int nivel){
+        this.nomeJogador = Objects.requireNonNull(nomeJogador, "Seu nome não pode ser nulo");
+        this.nomePersonagem = Objects.requireNonNull(nomePersonagem, "Nome do personagem não pode ser nulo");
+        this.tamanho = Objects.requireNonNull(tamanho, "tamanho não pode ser nulo");
+       
         
-        Objects.requireNonNull(nome);
-        this.nome = nome;
-        if(nivel <= 0){
-            throw new IllegalArgumentException("Nível não pode ser zero ou menor");
-        }
-        if(idade <= 0){
-            throw new IllegalArgumentException("Idade não pode ser zero ou menor");
-        }
-        this.nivel = nivel; 
-        this.idade = idade;
-    } 
-    public String getNome(){
-        return this.nome;
     }
-    public int getNivel(){
-        return this.nivel;
-    } 
+
     public int getIdade(){
         return this.idade;
-    } 
-    public double getTamanho(){
-        return this.tamanho;
     }
-    public abstract String totalCarga();
-
-    
-
 }
+  
