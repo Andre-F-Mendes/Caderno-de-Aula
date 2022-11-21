@@ -11,8 +11,6 @@ public abstract class Pessoa {
     private ArrayList<String> talentos = new ArrayList<>();
     private ArrayList<String> talentosClasse = new ArrayList<String>();
     
-
-    
     public Pessoa(String nomeJogador, String nomePersonagem, String tamanho, int idade, int nivel){
         this.nomeJogador = Objects.requireNonNull(nomeJogador, "Seu nome não pode ser nulo");
         this.nomePersonagem = Objects.requireNonNull(nomePersonagem, "Nome do personagem não pode ser nulo");
@@ -30,13 +28,15 @@ public abstract class Pessoa {
     public int getIdade(){
         return this.idade;
     }
-    
+    // retorna o nivel da pessoa
     public int getNivel() {
         return this.nivel;
     }
+    // retorna o tamanho da pessoa
     public String getTamanho() {
         return this.tamanho;
     }
+    // retorna os talentos da pessoa
     public String getTalentos(){
         String talento = " ";
         for(int i = 0; i < this.talentos.size(); i++ ){
@@ -44,17 +44,28 @@ public abstract class Pessoa {
         }
         return talento;
     }
+    // retorna um talento da lista em especifico
+    public String getTalentosClasseEspecifico(int pos) {
+
+        return talentosClasse.get(pos);
+    }
+    // retorna toda a lista de talentos
     public ArrayList<String> getTalentosClasse() {
+
         return talentosClasse;
     }
-    public void setTalentosClasse(String ) {
-        this.talentosClasse = talentosClasse;
+    // adiciona a lista de talentos
+    public void setTalentosClasse(String osTalentos) {
+        
+        for(String l : osTalentos.split(" ")){
+           this.talentosClasse.add(l);
+        }
     }
+    //adiciona um talento da lista para os talentos da pessoa
     public void addTalento(int pos){
         String posTalento = this.talentosClasse.get(pos);
 
         this.talentos.add(posTalento);
     }
-    public abstract void addTalentosClasse();
 }
   
