@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public abstract class Pessoa {
-    private int forc, des, con, inte, sab, car;
+    private int[] habilidades = new int[6];
     private final String nomeJogador, nomePersonagem;
     private int idade = 0, nivel = 0;
     private String tamanho;
@@ -26,16 +26,19 @@ public abstract class Pessoa {
         this.nivel = nivel;
     }
     public int getIdade(){
-        return this.idade;
+        return this.idade;q
     }
+    
     // retorna o nivel da pessoa
     public int getNivel() {
         return this.nivel;
     }
+    
     // retorna o tamanho da pessoa
     public String getTamanho() {
         return this.tamanho;
     }
+    
     // retorna os talentos da pessoa
     public String getTalentos(){
         String talento = " ";
@@ -44,23 +47,29 @@ public abstract class Pessoa {
         }
         return talento;
     }
+    
+    //retorna o quantos talentos tem
     public int getTamanhoTalentos(){
         return this.talentos.size();
     }
+    
     // retorna um talento da lista em especifico
     public String getTalentosListaEspecifico(int pos) {
         return talentosClasse.get(pos);
     }
+    
     // retorna toda a lista de talentos
     public ArrayList<String> getTalentosLista() {
         return talentosClasse;
     }
+    
     // adiciona a lista de talentos
     public void setTalentosLista(String osTalentos) {
         for(String l : osTalentos.split(" ")){
            this.talentosClasse.add(l);
         }
     }
+    
     //adiciona um talento da lista para os talentos da pessoa
     public void addTalento(int pos){
         String posTalento = this.talentosClasse.get(pos);
@@ -69,5 +78,6 @@ public abstract class Pessoa {
         }else throw new IllegalArgumentException("O seu nível não permite adicionar tantos talentos");
     }
     
+    //
 }
   
