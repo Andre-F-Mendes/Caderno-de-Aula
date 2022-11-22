@@ -19,8 +19,8 @@ public abstract class Pessoa {
         if(idade <= 0){
             throw new IllegalArgumentException("Idade não pode ser menor ou igual a zero");
         }
-        if(nivel <= 0){
-            throw new IllegalArgumentException("Nível não pode ser menor ou igual a zero");
+        if(nivel <= 0 || nivel > 20){
+            throw new IllegalArgumentException("Nível não pode ser menor ou igual a zero e nem maior que vinte");
         }
         this.idade = idade;
         this.nivel = nivel;
@@ -40,23 +40,23 @@ public abstract class Pessoa {
     public String getTalentos(){
         String talento = " ";
         for(int i = 0; i < this.talentos.size(); i++ ){
-            talento = this.talentos.get(i);
+            talento += "\n" + this.talentos.get(i);
         }
         return talento;
     }
+    public int getTamanhoTalentos(){
+        return this.talentos.size();
+    }
     // retorna um talento da lista em especifico
-    public String getTalentosClasseEspecifico(int pos) {
-
+    public String getTalentosListaEspecifico(int pos) {
         return talentosClasse.get(pos);
     }
     // retorna toda a lista de talentos
-    public ArrayList<String> getTalentosClasse() {
-
+    public ArrayList<String> getTalentosLista() {
         return talentosClasse;
     }
     // adiciona a lista de talentos
-    public void setTalentosClasse(String osTalentos) {
-        
+    public void setTalentosLista(String osTalentos) {
         for(String l : osTalentos.split(" ")){
            this.talentosClasse.add(l);
         }
@@ -64,8 +64,10 @@ public abstract class Pessoa {
     //adiciona um talento da lista para os talentos da pessoa
     public void addTalento(int pos){
         String posTalento = this.talentosClasse.get(pos);
-
-        this.talentos.add(posTalento);
+        if(getTamanhoTalentos() < Math.ceil(getNivel()/2.0)){
+            this.talentos.add(posTalento);
+        }else throw new IllegalArgumentException("O seu nível não permite adicionar tantos talentos");
     }
+    
 }
   
