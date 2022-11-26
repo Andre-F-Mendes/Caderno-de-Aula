@@ -8,11 +8,13 @@ public abstract class Pessoa {
     private double[] habilidades = new double[6], modificadores = new double[6];
     private final String nomeJogador, nomePersonagem, tamanho;
     private int idade, nivel = 1;
+    private double carga;
     private ArrayList<String> talentos = new ArrayList<>();
     private ArrayList<String> itens = new ArrayList<>();
     private ArrayList<String> talentosLista = new ArrayList<>();
     private ArrayList<String> itensLista = new ArrayList<>(); 
 
+    //construtor
     public Pessoa(String nomeJogador, String nomePersonagem, String tamanho, int idade, int nivel){
         this.nomeJogador = Objects.requireNonNull(nomeJogador, "Seu nome não pode ser nulo");
         this.nomePersonagem = Objects.requireNonNull(nomePersonagem, "Nome do personagem não pode ser nulo");
@@ -26,6 +28,10 @@ public abstract class Pessoa {
         }
         this.idade = idade;
         this.nivel = nivel;
+    }
+    
+    public double getCarga() {
+        return carga;
     }
     //retorna o nnome do Persogem
     public String getNomePersonagem() {
@@ -156,6 +162,10 @@ public abstract class Pessoa {
         }
         return valor;
     }
+    
+    public void setCarga(double carga) {
+    this.carga = carga;
+    }
     //adiciona a lista de talentos
     public void setTalentosLista(String osTalentos) {
         for(String l : osTalentos.split(" ")){
@@ -172,6 +182,10 @@ public abstract class Pessoa {
     public void setHabilidades(double[] habilidades) {
         this.habilidades = habilidades;
     }
+    //aumenta em 1 a habilidade na posição pedida
+    public void aumentaHabilidade(int pos){
+        this.habilidades[pos] += 1;
+    }
     //adiciona um talento da lista para os talentos da pessoa
     public void addTalento(int pos){
         if(getTamanhoTalentos() < Math.ceil(getNivel()/2.0)){
@@ -180,7 +194,7 @@ public abstract class Pessoa {
     }
     //adiciona um item da lista para os itens da pessoa
     public void addItens(int pos){
-        if(this.getTamanhoItens() > (this.habilidades[0]*3)){
+        if(this.getTamanhoItens() > this.getCarga()){
             throw new IllegalArgumentException("Você não pode carregar mais itens do que você consegue");
         }else this.itens.add(this.itensLista.get(pos));
     }
@@ -190,7 +204,9 @@ public abstract class Pessoa {
     }
     //aumenta o nível em +1
     public void upNivel(){
-        this.nivel += 1;
+        if(this.nivel >= 20){
+            throw new IllegalArgumentException("Você atingiu o nível máximo");
+        }else this.nivel += 1;
     }
     //maestria de classe
     public abstract void maestria();

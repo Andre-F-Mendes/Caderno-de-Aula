@@ -18,32 +18,33 @@ public class Teste {
         
         andre.setHabilidades(habilidadesAndre);
 
-        System.out.print("Novas Habilidades: " + andre.getHabilidades() + "\nNovos Modificadores: ");
-        System.out.println(andre.getModificadores());
-
+        System.out.print("Novas Habilidades: " + andre.getHabilidades() + "\nNovos Modificadores: " + andre.getModificadores());
+        
         andre.fazAniversario();
         andre.upNivel();
         
-        System.out.print("Nova Idade: "  + andre.getIdade() + "\nNovo Nível: ");
-        System.out.println(andre.getNivel());
+        System.out.print("\nNovas Habilidades: " + andre.getHabilidades() + "\nNovos Modificadores: " + andre.getModificadores());
 
-        System.out.print("Lista de Talentos de Mago" + andre.getItensLista() + "\nTalento Especifico da Lista: ");
-        System.out.println(andre.getIEL(0));
+        // System.out.print("Nova Idade: "  + andre.getIdade() + "\nNovo Nível: ");
+        // System.out.println(andre.getNivel());
+        
+        // System.out.print("Lista de Talentos de Mago" + andre.getItensLista() + "\nTalento Especifico da Lista: ");
+        // System.out.println(andre.getIEL(0));
 
-        System.out.println("Itens Atuais: " + andre.getItens());
+        // System.out.println("Itens Atuais: " + andre.getItens());
         
-        andre.addItens(0);
-        andre.addItens(1);
-        andre.addItens(2);
+        // andre.addItens(0);
+        // andre.addItens(1);
+        // andre.addItens(2);
         
-        System.out.println("Novos Itens: " + andre.getItens() + "\nItem Especifico: ");
-        System.out.println(andre.getItem(0));
+        // System.out.println("Novos Itens: " + andre.getItens() + "\nItem Especifico: ");
+        // System.out.println(andre.getItem(0));
 
-        andre.addTalento(0);
-        andre.addTalento(1);
-        andre.addTalento(2);
+        // andre.addTalento(0);
+        // andre.addTalento(1);
+        // andre.addTalento(2);
         
-        System.out.println("Talentos: " + andre.getTalentos());
-        System.out.println("Talento: " + andre.getTalento(0));
+        // System.out.println("Talentos: " + andre.getTalentos());
+        // System.out.println("Talento: " + andre.getTalento(0));
     }
 }
