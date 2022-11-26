@@ -98,17 +98,63 @@ public abstract class Pessoa {
         return this.itens.size();
     }
     //retorna o valor da habilidade
-    public double[] getHabilidades() {
-        return habilidades;
+    public String getHabilidades() {
+        String valor = " ";
+        for(int i = 0; i < this.habilidades.length; i++){
+            switch (i) {
+                case 0:
+                    valor += "Força: " + this.habilidades[i];
+                    break;
+                case 1:
+                    valor += ", Destreza: " + this.habilidades[i];
+                    break;
+                case 2:
+                    valor += ", Constituição: " + this.habilidades[i];
+                    break;
+                case 3:
+                    valor += ", Inteligência: " + this.habilidades[i];
+                    break;
+                case 4:
+                    valor += ", Sabedoria: " + this.habilidades[i];
+                    break;
+                case 5:
+                    valor += ", Carisma: " + this.habilidades[i];
+                    break;
+            }
+        }
+        return valor;
     }
     //retorna o valor do modificador de habilidade
-    public double[] getModificadores(){
+    public String getModificadores(){
         for(int i = 0; i < this.habilidades.length; i++){
             if(this.habilidades[i]%2 == 1){
                 modificadores[i] = Math.ceil( (this.habilidades[i]-10) / 2.0);
             }else modificadores[i] = (this.habilidades[i] - 10)/2.0; 
         }
-        return modificadores;
+        String valor = " ";
+        for(int i = 0; i < this.modificadores.length; i++){
+            switch (i) {
+                case 0:
+                    valor += "Força: " + this.modificadores[i];
+                    break;
+                case 1:
+                    valor += ", Destreza: " + this.modificadores[i];
+                    break;
+                case 2:
+                    valor += ", Constituição: " + this.modificadores[i];
+                    break;
+                case 3:
+                    valor += ", Inteligência: " + this.modificadores[i];
+                    break;
+                case 4:
+                    valor += ", Sabedoria: " + this.modificadores[i];
+                    break;
+                case 5:
+                    valor += ", Carisma: " + this.modificadores[i];
+                    break;
+            }
+        }
+        return valor;
     }
     //adiciona a lista de talentos
     public void setTalentosLista(String osTalentos) {
