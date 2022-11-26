@@ -1,23 +1,18 @@
 package MenuRPG;
 
-import java.math.MathContext;
-
 public class Teste {
     
     public static void main(String[] args) {
         
-        Pessoa andre = new Mago("André", "UNTIL", "MEDIO", 23, 5);
+        Pessoa andre = new Mago("André", "UNTIL", "MEDIO", 23, 5);  
         
-        // andre.setForc(3);
-        
-        // System.out.println(andre.getNomeJogador());
-        // System.out.println(andre.getNomePersonagem());
-        // System.out.println(andre.getTamanho());
-        // System.out.println(andre.getIdade());
-        // System.out.println(andre.getNivel());
-        // System.out.println(andre.getForc());
-        // System.out.println(andre.getItensLista());
-        // System.out.println(andre.getIEL(0));
+        System.out.println(andre.getNomeJogador());
+        System.out.println(andre.getNomePersonagem());
+        System.out.println(andre.getTamanho());
+        System.out.println(andre.getIdade());
+        System.out.println(andre.getNivel());
+        System.out.println(andre.getItensLista());
+        System.out.println(andre.getIEL(0));
 
 
         // andre.addItens(0);

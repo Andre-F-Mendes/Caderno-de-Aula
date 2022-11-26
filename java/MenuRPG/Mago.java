@@ -11,6 +11,12 @@ public class Mago extends Pessoa {
         setTalentosLista(magoTalentos);
         setItensLista(magoTalentos);
     }
+
+    @Override
+    public void maestria() {
+       
+        
+    }
     
     
     

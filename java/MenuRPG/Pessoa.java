@@ -5,66 +5,14 @@ import java.util.Objects;
 
 public abstract class Pessoa {
     //Força, Destreza, Constituição, Inteligência, Sabedoria, Carisma
-    private int[] habilidades = new int[6];
-    private int forc, des, cons, intel, sab, car;
-    public int getForc() {
-        return forc;
-    }
-
-    public void setForc(int forc) {
-        this.forc = forc;
-    }
-
-    public int getDes() {
-        return des;
-    }
-
-    public void setDes(int des) {
-        this.des = des;
-    }
-
-    public int getCons() {
-        return cons;
-    }
-
-    public void setCons(int cons) {
-        this.cons = cons;
-    }
-
-    public int getIntel() {
-        return intel;
-    }
-
-    public void setIntel(int intel) {
-        this.intel = intel;
-    }
-
-    public int getSab() {
-        return sab;
-    }
-
-    public void setSab(int sab) {
-        this.sab = sab;
-    }
-
-    public int getCar() {
-        return car;
-    }
-
-    public void setCar(int car) {
-        this.car = car;
-    }
-    private final String nomeJogador, nomePersonagem;
-    private int idade = 0, nivel = 0;
-    private String tamanho;
+    private double[] habilidades = new double[6], modificadores = new double[6];
+    private final String nomeJogador, nomePersonagem, tamanho;
+    private int idade, nivel = 1;
     private ArrayList<String> talentos = new ArrayList<>();
-    private ArrayList<String> talentosLista = new ArrayList<>();
     private ArrayList<String> itens = new ArrayList<>();
-    private ArrayList<String> itensLista = new ArrayList<>();
-    
+    private ArrayList<String> talentosLista = new ArrayList<>();
+    private ArrayList<String> itensLista = new ArrayList<>(); 
 
-
-    
     public Pessoa(String nomeJogador, String nomePersonagem, String tamanho, int idade, int nivel){
         this.nomeJogador = Objects.requireNonNull(nomeJogador, "Seu nome não pode ser nulo");
         this.nomePersonagem = Objects.requireNonNull(nomePersonagem, "Nome do personagem não pode ser nulo");
@@ -79,7 +27,6 @@ public abstract class Pessoa {
         this.idade = idade;
         this.nivel = nivel;
     }
-    
     //retorna o nnome do Persogem
     public String getNomePersonagem() {
         return nomePersonagem;
@@ -129,8 +76,8 @@ public abstract class Pessoa {
     public ArrayList<String> getItensLista() {
         return this.itensLista;
     }
-     // retorna um Item Especifoc da Lista (IEL)
-     public String getIEL(int pos) {
+    //retorna um Item Especifoc da Lista (IEL)
+    public String getIEL(int pos) {
         return this.itensLista.get(pos);
     }
     //retorna os itens da pessoa
@@ -147,19 +94,37 @@ public abstract class Pessoa {
     }
     //retorna o quanto de itens a pessoa tem
     public int getTamanhoItens(){
+        
         return this.itens.size();
     }
-    // adiciona a lista de talentos
+    //retorna o valor da habilidade
+    public double[] getHabilidades() {
+        return habilidades;
+    }
+    //retorna o valor do modificador de habilidade
+    public double[] getModificadores(){
+        for(int i = 0; i < this.habilidades.length; i++){
+            if(this.habilidades[i]%2 == 1){
+                modificadores[i] = Math.ceil( (this.habilidades[i]-10) / 2.0);
+            }else modificadores[i] = (this.habilidades[i] - 10)/2.0; 
+        }
+        return modificadores;
+    }
+    //adiciona a lista de talentos
     public void setTalentosLista(String osTalentos) {
         for(String l : osTalentos.split(" ")){
             this.talentosLista.add(l);
         }
     }
-    // adiciona a lista de Itens
+    //adiciona a lista de Itens
     public void setItensLista(String osItens) {
         for(String l : osItens.split(" ")){
             this.itensLista.add(l);
         }
+    }  
+    //recebe vetor como parameto e coloca os valores
+    public void setHabilidades(double[] habilidades) {
+        this.habilidades = habilidades;
     }
     //adiciona um talento da lista para os talentos da pessoa
     public void addTalento(int pos){
@@ -169,10 +134,20 @@ public abstract class Pessoa {
     }
     //adiciona um item da lista para os itens da pessoa
     public void addItens(int pos){
-        if(this.getTamanhoItens() > (this.forc*3)){
+        if(this.getTamanhoItens() > (this.habilidades[0]*3)){
             throw new IllegalArgumentException("Você não pode carregar mais itens do que você consegue");
         }else this.itens.add(this.itensLista.get(pos));
     }
+    //adiciona +1 na idade
+    public void fazAniversario(){
+        this.idade += 1;
+    }
+    //aumenta o nível em +1
+    public void upNivel(){
+        this.nivel += 1;
+    }
+    //maestria de classe
+    public abstract void maestria();
     
 
 }
