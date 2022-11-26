@@ -20,9 +20,12 @@ public class Mago extends Pessoa {
         super.upNivel(); 
         aumentaHabilidade(4);
     }
+    
     @Override
-    public void addItens(int pos) {
-        
+    public void addItem(int pos) {
+        if(this.getTamanhoItens() > (this.getHabilidade(3)*3)){
+            throw new IllegalArgumentException("Você não pode carregar mais itens do que você consegue");
+        }else super.addItem(pos);
     }
 
     @Override

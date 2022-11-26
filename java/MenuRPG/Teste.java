@@ -3,7 +3,7 @@ package MenuRPG;
 public class Teste {
     
     public static void main(String[] args) {
-        double[] habilidadesAndre = {10.0, 12.0, 11.0, 19.0, 20.0, 17.0};
+        double[] habilidadesAndre = {1.0, 12.0, 11.0, 1.0, 20.0, 17.0};
 
         Pessoa andre = new Mago("André", "Zapson", "MEDIO", 23, 5);  
         
@@ -33,10 +33,12 @@ public class Teste {
 
         // System.out.println("Itens Atuais: " + andre.getItens());
         
-        // andre.addItens(0);
-        // andre.addItens(1);
-        // andre.addItens(2);
+        andre.addItem(0);
+        andre.addItem(0);
+        andre.addItem(0);
+        andre.addItem(0);
         
+
         // System.out.println("Novos Itens: " + andre.getItens() + "\nItem Especifico: ");
         // System.out.println(andre.getItem(0));
 

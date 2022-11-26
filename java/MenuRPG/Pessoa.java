@@ -8,7 +8,6 @@ public abstract class Pessoa {
     private double[] habilidades = new double[6], modificadores = new double[6];
     private final String nomeJogador, nomePersonagem, tamanho;
     private int idade, nivel = 1;
-    private double carga;
     private ArrayList<String> talentos = new ArrayList<>();
     private ArrayList<String> itens = new ArrayList<>();
     private ArrayList<String> talentosLista = new ArrayList<>();
@@ -30,9 +29,6 @@ public abstract class Pessoa {
         this.nivel = nivel;
     }
     
-    public double getCarga() {
-        return carga;
-    }
     //retorna o nnome do Persogem
     public String getNomePersonagem() {
         return nomePersonagem;
@@ -130,6 +126,10 @@ public abstract class Pessoa {
         }
         return valor;
     }
+    //retorna o valor da habilidade na posição desejada do vetor
+    public double getHabilidade(int pos) {
+        return this.habilidades[pos];
+    }
     //retorna o valor do modificador de habilidade
     public String getModificadores(){
         for(int i = 0; i < this.habilidades.length; i++){
@@ -162,10 +162,6 @@ public abstract class Pessoa {
         }
         return valor;
     }
-    
-    public void setCarga(double carga) {
-    this.carga = carga;
-    }
     //adiciona a lista de talentos
     public void setTalentosLista(String osTalentos) {
         for(String l : osTalentos.split(" ")){
@@ -193,8 +189,8 @@ public abstract class Pessoa {
         }else throw new IllegalArgumentException("O seu nível não permite adicionar tantos talentos");
     }
     //adiciona um item da lista para os itens da pessoa
-    public void addItens(int pos){
-        if(this.getTamanhoItens() > this.getCarga()){
+    public void addItem(int pos){
+        if(this.getTamanhoItens() > (this.getHabilidade(0)*3)){
             throw new IllegalArgumentException("Você não pode carregar mais itens do que você consegue");
         }else this.itens.add(this.itensLista.get(pos));
     }
