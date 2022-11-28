@@ -12,6 +12,7 @@ public abstract class Pessoa {
     private ArrayList<String> itens = new ArrayList<>();
     private ArrayList<String> talentosLista = new ArrayList<>();
     private ArrayList<String> itensLista = new ArrayList<>(); 
+    private String titulo;
 
     //construtor
     public Pessoa(String nomeJogador, String nomePersonagem, String tamanho, int idade, int nivel){
@@ -162,6 +163,14 @@ public abstract class Pessoa {
         }
         return valor;
     }
+    //retorna o titulo da classe da pessoa
+    public String getTitulo() {
+        return this.titulo;
+    }
+    //define o titulo da classe
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
     //adiciona a lista de talentos
     public void setTalentosLista(String osTalentos) {
         for(String l : osTalentos.split(" ")){
@@ -190,7 +199,7 @@ public abstract class Pessoa {
     }
     //adiciona um item da lista para os itens da pessoa
     public void addItem(int pos){
-        if(this.getTamanhoItens() > (this.getHabilidade(0)*3)){
+        if(this.itens.size() > this.habilidades[0]*3){
             throw new IllegalArgumentException("Você não pode carregar mais itens do que você consegue");
         }else this.itens.add(this.itensLista.get(pos));
     }
@@ -205,7 +214,7 @@ public abstract class Pessoa {
         }else this.nivel += 1;
     }
     //maestria de classe
-    public abstract void maestria();
+    public abstract boolean maestria();
     
 
 }
