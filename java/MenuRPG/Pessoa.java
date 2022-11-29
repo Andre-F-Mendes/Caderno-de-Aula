@@ -3,7 +3,7 @@ package MenuRPG;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public abstract class Pessoa {
+public abstract class Pessoa implements Comparable<Pessoa>{
     //Força, Destreza, Constituição, Inteligência, Sabedoria, Carisma
     private double[] habilidades = new double[6], modificadores = new double[6];
     private int idade, nivel = 1;
@@ -11,7 +11,7 @@ public abstract class Pessoa {
     private ArrayList<String> talentos = new ArrayList<>(), talentosLista = new ArrayList<>(), itens = new ArrayList<>(), itensLista = new ArrayList<>(); 
     private String titulo;
     private boolean maestria = false;
-    private double dinheiro; 
+    private double dinheiro = 1000; 
 
     //construtor
     public Pessoa(String nomeJogador, String nomePersonagem, String tamanho, int idade, int nivel){
@@ -242,8 +242,32 @@ public abstract class Pessoa {
     
     @Override
     public String toString() {
+        String info = "\nJogador: " + this.getNomeJogador() + "\nPersonagem: " + this.getNomePersonagem() + " ("+ getTitulo()+ ")" + "\nTamanho: " + getTamanho() + "\nIdade" + getIdade()
+        + "\nNível: " + getNivel() + "\nQuantidade de Talentos: " + getTamanhoTalentos() + "\nQuantidade de Itens: " + getTamanhoItens() + "\nQuantidade de dinheiro: $"
+        + getDinheiro();
+
+        return info;
+       
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) return false;
+        if(!(obj.getClass().isInstance(this))) return false;
+        if(this == obj) return true;
         
-        return super.toString();
+        Pessoa a = (Pessoa)obj;
+        return (this.nomePersonagem.equals(a.getNomePersonagem()) && this.tamanho.equals(a.tamanho) && this.idade == a.getIdade() && this.nivel == a.getNivel());
+    }
+    @Override
+    public int compareTo(Pessoa o) {
+        if(this.equals(o)) return 0;
+        int comp = this.titulo.compareTo(o.getTitulo());
+        if(comp == 0){
+            
+        }
+
+        return 0;
     }
 
 }
