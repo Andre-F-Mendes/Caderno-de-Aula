@@ -264,9 +264,8 @@ public abstract class Pessoa implements Comparable<Pessoa>{
         if(this.equals(o)) return 0;
         int comp = this.titulo.compareTo(o.getTitulo());
         if(comp == 0){
-            
-        }
 
+        }
         return 0;
     }
 
