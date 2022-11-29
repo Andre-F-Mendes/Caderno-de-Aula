@@ -8,10 +8,12 @@ public class Equipe{
     private ArrayList<Pessoa> equipe;
     
     //constructor
-    public Equipe(String nomeEquipe) {
-        equipe = new ArrayList<>();
-        Objects.requireNonNull(nomeEquipe, "Nome da equipe não pode ser nulo");
-        this.nomeEquipe = nomeEquipe;
+    
+    public Equipe(String nomeEquipe, ArrayList<Pessoa> equipe) {
+        
+        this.nomeEquipe = Objects.requireNonNull(nomeEquipe, "Nome da equipe não pode ser nulo");
+
+        this.equipe = Objects.requireNonNull(equipe, "Equipe não pode ser nula");
     }
     //retorna o nome da Equipe
     public String getNomeEquipe() {
@@ -23,7 +25,9 @@ public class Equipe{
     public Pessoa getPersonagem(int pos){
         return this.equipe.get(pos);
     }
-    
+    public String getNomePersonagem(int pos){
+        return this.equipe.get(pos).getNomePersonagem();
+    }
     public String getNomesPersonagens(){
         String nomes = " ";
         for(int i = 0; i < this.getQuantidadePessoas(); i++){

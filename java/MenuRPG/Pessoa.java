@@ -243,7 +243,7 @@ public abstract class Pessoa implements Comparable<Pessoa>{
     
     @Override
     public String toString() {
-        String info = "\nJogador: " + this.getNomeJogador() + "\nPersonagem: " + this.getNomePersonagem() + " ("+ getTitulo()+ ")" + "\nTamanho: " + getTamanho() + "\nIdade" + getIdade()
+        String info = "\nJogador: " + this.getNomeJogador() + "\nPersonagem: " + this.getNomePersonagem() + " ("+ getTitulo()+ ")" + "\nTamanho: " + getTamanho() + "\nIdade: " + getIdade()
         + "\nNível: " + getNivel() + "\nQuantidade de Talentos: " + getTamanhoTalentos() + "\nQuantidade de Itens: " + getTamanhoItens() + "\nQuantidade de dinheiro: $"
         + getDinheiro();
 
