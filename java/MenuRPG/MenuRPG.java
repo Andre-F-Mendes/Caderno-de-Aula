@@ -16,16 +16,16 @@ public class MenuRPG {
     }
     
     public static void main(String[] args) {
-        String nomeJogador, nomePersonagem;
+        String nomeJogador, nomePersonagem, altura;
         int idade, nivel, tipo;
-        double altura;
+        
         
         // Pessoa mago = new Mago("André", "Zapson", "Medio", 86, 20);
         Scanner ent = new Scanner(System.in);
-        System.out.print("Informe o nome da playlist: ");
+        System.out.print("Informe o nome da equipe: ");
         String nomeEquipe = ent.nextLine();
         Equipe equipe = new Equipe(nomeEquipe);
-        System.out.println("Informe o nome do Jogador: ");
+        System.out.print("Informe o nome do Jogador: ");
         nomeJogador = ent.nextLine();
         while(true){
             int opcao = printaMenu(equipe);
@@ -40,13 +40,13 @@ public class MenuRPG {
                 if(tipo < 0 ||tipo > 1){
                     throw new IllegalArgumentException("Valor invalido");
                 }else{
-                    System.out.println("Informe o nome do Personagem: ");
+                    System.out.print("Informe o nome do Personagem: ");
                     nomePersonagem = ent.nextLine();
-                    System.out.println("Escolha o tamanho do seu personagem: ");
-                    altura = ent.nextDouble();
-                    System.out.println("Informe a idade do seu Personagem: ");
+                    System.out.print("Informe a altura do seu Personagem: ");
+                    altura = ent.nextLine();
+                    System.out.print("Informe a idade do seu Personagem: ");
                     idade = Integer.parseInt(ent.nextLine());
-                    System.out.println("Informe o nível do seu Personagem: ");
+                    System.out.print("Informe o nível do seu Personagem: ");
                     nivel = Integer.parseInt(ent.nextLine());
                 }
                 if(tipo == 0){

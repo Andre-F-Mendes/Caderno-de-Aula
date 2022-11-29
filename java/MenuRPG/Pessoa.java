@@ -7,26 +7,26 @@ public abstract class Pessoa implements Comparable<Pessoa>{
     //Força, Destreza, Constituição, Inteligência, Sabedoria, Carisma
     private double[] habilidades = new double[6], modificadores = new double[6];
     private int idade, nivel = 1;
-    private final double altura;
-    private final String nomeJogador, nomePersonagem;
+    private final String nomeJogador, nomePersonagem, altura;
     private ArrayList<String> talentos = new ArrayList<>(), talentosLista = new ArrayList<>(), itens = new ArrayList<>(), itensLista = new ArrayList<>(); 
     private String titulo;
     private boolean maestria = false;
     private double dinheiro = 1000; 
 
     //construtor
-    public Pessoa(String nomeJogador, String nomePersonagem, double altura, int idade, int nivel){
+    public Pessoa(String nomeJogador, String nomePersonagem, String altura, int idade, int nivel){
         this.nomeJogador = Objects.requireNonNull(nomeJogador, "Seu nome não pode ser nulo");
         this.nomePersonagem = Objects.requireNonNull(nomePersonagem, "Nome do personagem não pode ser nulo");
+        this.altura = altura = Objects.requireNonNull(altura, "Altura não pode ser nula"); 
        
-        this.altura = altura; 
-
+        
         if(idade <= 0){
             throw new IllegalArgumentException("Idade não pode ser menor ou igual a zero");
         }
         if(nivel <= 0 || nivel > 20){
             throw new IllegalArgumentException("Nível não pode ser menor ou igual a zero e nem maior que vinte");
         }
+        
         this.idade = idade;
         this.nivel = nivel;
 
@@ -66,7 +66,7 @@ public abstract class Pessoa implements Comparable<Pessoa>{
         return this.nivel;
     }   
     // retorna o tamanho da pessoa
-    public double getTamanho() {
+    public String getTamanho() {
         return this.altura;
     }
     // retorna toda a lista de talentos
@@ -258,7 +258,7 @@ public abstract class Pessoa implements Comparable<Pessoa>{
         if(this == obj) return true;
         
         Pessoa a = (Pessoa)obj;
-        return (this.nomePersonagem.equals(a.getNomePersonagem()) && this.altura == a.getTamanho()) && this.idade == a.getIdade() && this.nivel == a.getNivel();
+        return (this.nomePersonagem.equals(a.getNomePersonagem()) && this.altura.equals(a.getTamanho())) && this.idade == a.getIdade() && this.nivel == a.getNivel();
     }
     @Override
     public int compareTo(Pessoa o) {

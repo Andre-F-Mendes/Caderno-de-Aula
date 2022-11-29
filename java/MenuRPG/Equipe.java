@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public class Equipe{
-    private  String nomeEquipe;
+    private String nomeEquipe;
     private ArrayList<Pessoa> equipe;
     
     //constructor
@@ -51,7 +51,10 @@ public class Equipe{
     //toString de equipe
     @Override
     public String toString() {
-        String retorno = "\nNome da Equipe: " + this.nomeEquipe + "\nQuantidade de Personagens: " + this.getQuantidadePessoas() + "\nPersonagens: " + getNomesPersonagens();
+        String retorno = "\nNome da Equipe: " + this.nomeEquipe + "\nQuantidade de Personagens: " + this.getQuantidadePessoas();
+        if(getQuantidadePessoas() >= 1){
+            retorno +=  "\nPersonagens: " + getNomesPersonagens();
+        }
         return retorno;
     }
     @Override

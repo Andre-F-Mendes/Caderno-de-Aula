@@ -4,13 +4,13 @@ package MenuRPG;
 
 public class Mago extends Pessoa {
     private String magoTalentos = ("Adaptabilidade BarreiraMística CantoMonástico ConhecimentoMágico ContraMágica DominarMagia EscudodaFé EscreverPergaminhos Familiar FocoemMagia MagiaCamuflada MagiadosBecos MagiaNatural MagiaCombatente MédicoDeCampo PoderDoRebanho PoderMágico PrepararPoções ResíduoMágicoCurativo SacerdoteCopista TeseArcana Metamagia AcelerarMagia AmpliarMagia AumentarMagia ElevarMagia EsculpirMagia EstenderMagia InvocaçãoAberrante MagiaCongelante MagiaConspurcada MagiaCorrosiva MagiaEletrizante MagiaExplosiva MagiaPrimordial MagiaSantificada MagiasemGestos MagiaSilenciosa MaximizarMagia PotencializarMagia ToqueLongínquo");
+    private String magoItens = ("ODesbravador HolyAvenger Kailash OlhodeSszzaas EspadadaJustiça OsRubisdaVirtude Shorder SlashCalliber WakizashidaMorte Wiesnbräu PoçãodaIra PoçãoAndarSobreÁgua PoçãodoCalor PoçãodoTitã PoçãodosEspinhos PoçãodeVelocidade PoçãodoFedor PoçãoBrilhante PóMágico PoçãodoAmor PoçãoCuradoura");
 
-
-    public Mago(String nomeJogador, String nomePersonagem, double altura, int idade, int nivel) {
+    public Mago(String nomeJogador, String nomePersonagem, String altura, int idade, int nivel) {
         super(nomeJogador, nomePersonagem, altura, idade, nivel);
 
         setTalentosLista(magoTalentos);
-        setItensLista(magoTalentos);
+        setItensLista(magoItens);
         
         setTitulo("Mago");
     }
