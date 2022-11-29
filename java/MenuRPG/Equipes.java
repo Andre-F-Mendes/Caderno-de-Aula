@@ -5,21 +5,21 @@ import java.util.ArrayList;
 
 
 public class Equipes extends Equipe {
-    private ArrayList<ArrayList<Pessoa>> contemEquipes = new ArrayList<ArrayList<Pessoa>>();
+    private  ArrayList<Equipe> contemEquipes;
 
-    public Equipes(String nomeEquipe, ArrayList<ArrayList<Pessoa>> contemEquipes) {
+    public Equipes(String nomeEquipe) {
         super(nomeEquipe);
-        this.contemEquipes = contemEquipes;
+        this.contemEquipes = new ArrayList<Equipe>();
     }
 
     public int quantidadeEquipes(){
         return this.contemEquipes.size();
     }
-    public ArrayList<ArrayList<Pessoa>> getContemEquipes() {
+    public ArrayList<Equipe> getContemEquipes() {
         return contemEquipes;
     }
-    public void addEquipe(ArrayList<Pessoa> equipe){
-        this.contemEquipes.add(equipe);
+    public void addEquipe(ArrayList<Equipe> equipe){
+        this.contemEquipes.addAll(equipe);
     }
     @Override
     public String toString() {
