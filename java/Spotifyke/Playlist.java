@@ -22,7 +22,6 @@ public class Playlist{
     public void addMusica(Musica musica){
         Objects.requireNonNull(musica);
         this.listaMusicas.add(musica);
-        
     }
     public Musica getMusica(int pos){
         return this.listaMusicas.get(pos);

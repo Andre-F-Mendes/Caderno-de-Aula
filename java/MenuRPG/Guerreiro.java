@@ -9,7 +9,6 @@ public class Guerreiro extends Pessoa {
         super(nomeJogador, nomePersonagem, tamanho, idade, nivel);
         
         setTitulo("Guerreiro");
-        setDinheiro(1000);
 
         setTalentosLista(this.guerreiroTalentos);
         setItensLista(this.guerreiroTalentos);
