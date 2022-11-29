@@ -8,7 +8,7 @@ public class Teste {
         Equipe equipeA = new Equipe("Maguinhos");
         Equipe equipeB = new Equipe("Guerreiros");
 
-        Pessoa a = new Mago
+       
         Pessoa mago = new Mago("André", "Zapson", "Medio", 86, 20);
         Pessoa mago1 = new Mago("André", "Zapson", "Medio", 86, 20);
         Pessoa mago2 = new Mago("André", "Zapson", "pequeno", 86, 20);
