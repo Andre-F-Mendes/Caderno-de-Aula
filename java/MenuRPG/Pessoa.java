@@ -13,6 +13,7 @@ public abstract class Pessoa {
     private ArrayList<String> talentosLista = new ArrayList<>();
     private ArrayList<String> itensLista = new ArrayList<>(); 
     private String titulo;
+    private boolean maestria = false;
 
     //construtor
     public Pessoa(String nomeJogador, String nomePersonagem, String tamanho, int idade, int nivel){
@@ -29,7 +30,19 @@ public abstract class Pessoa {
         this.idade = idade;
         this.nivel = nivel;
     }
+
+
+    public boolean isMaestria() {
+        return maestria;
+    }
+
+    public void setMaestria(boolean maestria) {
+        this.maestria = maestria;
+    }
     
+    public ArrayList<String> getArrayItem() {
+        return itens;
+    }
     //retorna o nnome do Persogem
     public String getNomePersonagem() {
         return nomePersonagem;
@@ -198,8 +211,8 @@ public abstract class Pessoa {
         }else throw new IllegalArgumentException("O seu nível não permite adicionar tantos talentos");
     }
     //adiciona um item da lista para os itens da pessoa
-    public void addItem(int pos){
-        if(this.itens.size() > this.habilidades[0]*3){
+    public void addItem(int pos, double totalCarga){
+        if(this.getTamanhoItens() >= totalCarga){
             throw new IllegalArgumentException("Você não pode carregar mais itens do que você consegue");
         }else this.itens.add(this.itensLista.get(pos));
     }
@@ -209,12 +222,14 @@ public abstract class Pessoa {
     }
     //aumenta o nível em +1
     public void upNivel(){
+        this.maestria();
         if(this.nivel >= 20){
             throw new IllegalArgumentException("Você atingiu o nível máximo");
         }else this.nivel += 1;
+
     }
     //maestria de classe
-    public abstract boolean maestria();
+    public abstract void maestria();
     
 
 }

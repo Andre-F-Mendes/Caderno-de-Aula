@@ -3,9 +3,9 @@ package MenuRPG;
 public class Teste {
     
     public static void main(String[] args) {
-        double[] habilidadesAndre = {1.0, 12.0, 11.0, 1.0, 20.0, 17.0};
+        double[] habilidadesAndre = {1.0, 12.0, 11.0, 2.0, 20.0, 17.0};
 
-        Pessoa andre = new Mago("André", "Zapson", "MEDIO", 23, 19);  
+        Pessoa andre = new Mago("André", "Zapson", "MEDIO", 85, 20);  
         
         // System.out.println("Jogador: " + andre.getNomeJogador());
         // System.out.println("Personagem: " + andre.getNomePersonagem());
@@ -21,8 +21,10 @@ public class Teste {
         // System.out.print("Novas Habilidades: " + andre.getHabilidades() + "\nNovos Modificadores: " + andre.getModificadores());
         
         andre.fazAniversario();
-        andre.upNivel();
+        // andre.upNivel();
         
+        System.out.println(andre.getTitulo());
+        andre.maestria();
         // System.out.print("\nNovas Habilidades: " + andre.getHabilidades() + "\nNovos Modificadores: " + andre.getModificadores());
 
         // System.out.print("Nova Idade: "  + andre.getIdade() + "\nNovo Nível: ");
@@ -33,11 +35,16 @@ public class Teste {
 
         // System.out.println("Itens Atuais: " + andre.getItens());
         
-        andre.addItem(0);
-        andre.addItem(0);
-        andre.addItem(0);
-        andre.addItem(0);
+        andre.addItem(0,0.0);
+        andre.addItem(0,0.0);
+        andre.addItem(0,0.0);
+        andre.addItem(0,0.0);
+        andre.addItem(0,0.0);
+        andre.addItem(0,0.0);
+        andre.addItem(0,0.0);
         
+        System.out.println(andre.getTamanhoItens());
+
         // System.out.println("Novos Itens: " + andre.getItens() + "\nItem Especifico: ");
         // System.out.println(andre.getItem(0));
 

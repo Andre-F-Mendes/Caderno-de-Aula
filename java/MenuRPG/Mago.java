@@ -21,18 +21,27 @@ public class Mago extends Pessoa {
         super.upNivel(); 
         aumentaHabilidade(4);
     }
-      
+    @Override
+    public void addItem(int pos, double totalCarga) {
+        if(isMaestria()){
+            super.addItem(pos, getHabilidade(3)*3);
+        }else{
+            super.addItem(pos, getHabilidade(0)*3);
+        }
+        
+    }
     
     @Override
-    public boolean maestria() {
-        boolean atingiuMaestria = false;
+    public void maestria() {
+        
         if(getNivel() == 20 && getIdade() >= 85){
-            atingiuMaestria = true;
+            setMaestria(true);
             setTitulo("Mago Implacavel");
-            System.out.println("Você atingiu a maestria máxima com a classe de mago. Seu novo título é: ");
 
-        }else throw new IllegalArgumentException("Você ainda não atingiu os requesitos para se tornar um mestre mago");
-        return atingiuMaestria;
+            if(!isMaestria()){
+                System.out.println("Você atingiu a maestria máxima com a classe de mago. Seu novo título é: ");
+            }
+        }
     }
     
     
