@@ -6,21 +6,20 @@ import java.util.Objects;
 public abstract class Pessoa {
     //Força, Destreza, Constituição, Inteligência, Sabedoria, Carisma
     private double[] habilidades = new double[6], modificadores = new double[6];
-    private final String nomeJogador, nomePersonagem, tamanho;
     private int idade, nivel = 1;
-    private ArrayList<String> talentos = new ArrayList<>();
-    private ArrayList<String> itens = new ArrayList<>();
-    private ArrayList<String> talentosLista = new ArrayList<>();
-    private ArrayList<String> itensLista = new ArrayList<>(); 
+    private final String nomeJogador, nomePersonagem, tamanho;
+    private ArrayList<String> talentos = new ArrayList<>(), talentosLista = new ArrayList<>(), itens = new ArrayList<>(), itensLista = new ArrayList<>(); 
     private String titulo;
     private boolean maestria = false;
+    private double dinheiro; 
 
     //construtor
     public Pessoa(String nomeJogador, String nomePersonagem, String tamanho, int idade, int nivel){
         this.nomeJogador = Objects.requireNonNull(nomeJogador, "Seu nome não pode ser nulo");
         this.nomePersonagem = Objects.requireNonNull(nomePersonagem, "Nome do personagem não pode ser nulo");
         this.tamanho = Objects.requireNonNull(tamanho, "tamanho não pode ser nulo");
-       
+        
+
         if(idade <= 0){
             throw new IllegalArgumentException("Idade não pode ser menor ou igual a zero");
         }
@@ -29,19 +28,25 @@ public abstract class Pessoa {
         }
         this.idade = idade;
         this.nivel = nivel;
-    }
 
-
-    public boolean isMaestria() {
-        return maestria;
-    }
-
-    public void setMaestria(boolean maestria) {
-        this.maestria = maestria;
+        
     }
     
-    public ArrayList<String> getArrayItem() {
-        return itens;
+    //retorna a quantidade de dinheiro
+    public double getDinheiro() {
+        return dinheiro;
+    }
+    //define a quantidade de dinheiro
+    public void setDinheiro(double dinheiro) {
+        this.dinheiro = dinheiro;
+    }
+    //retorna a maestria
+    public boolean isMaestria() {
+        return this.maestria;
+    }
+    //define a maestria
+    public void setMaestria(boolean maestria) {
+        this.maestria = maestria;
     }
     //retorna o nnome do Persogem
     public String getNomePersonagem() {
@@ -204,6 +209,10 @@ public abstract class Pessoa {
     public void aumentaHabilidade(int pos){
         this.habilidades[pos] += 1;
     }
+    //aumenta em 1 a habilidade na posição pedida
+    public void setHabilidade(int pos, double valor){
+        this.habilidades[pos] = valor;
+    }
     //adiciona um talento da lista para os talentos da pessoa
     public void addTalento(int pos){
         if(getTamanhoTalentos() < Math.ceil(getNivel()/2.0)){
@@ -231,5 +240,10 @@ public abstract class Pessoa {
     //maestria de classe
     public abstract void maestria();
     
+    @Override
+    public String toString() {
+        
+        return super.toString();
+    }
 
 }
