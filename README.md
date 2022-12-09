@@ -1,2 +1,2 @@
-# Caderno
-Programas feitos em aula ou envolvendo a aula do curso tecnico de informatica do IFRS.
+#Caderno
+Códigos desenvolvidos durante a aula ou envolvendo as aulas no Insituto Federal Campus Osório.
