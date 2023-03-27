@@ -21,12 +21,8 @@ public class Musica{
 
         //valida duração
         Objects.requireNonNull(duracao, "A duração não pode ser nula");
-        
-        //valida reprodução
-        Objects.requireNonNull(reproducoes, "As reproduções não podem ser nulas");
 
         
-
         if(duracao.isNegative()){
             throw new IllegalArgumentException("Duração não pode ter valor negativo");
         }if(reproducoes < 0){
