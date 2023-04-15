@@ -1,4 +1,4 @@
-package java.A2023.DeLorean;
+package java.A2023.DeLorean.src;
 
 public class CapacitorFluxo {
     
