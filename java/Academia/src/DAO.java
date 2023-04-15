@@ -10,9 +10,9 @@
 interface DAO {
     public boolean create (Object obj);
     
-    public boolean delete (Object obj);
-    
     public boolean read (Object obj);
     
     public boolean update (Object obj);
+    
+    public boolean delete (Object obj);
 }
