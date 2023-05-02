@@ -6,7 +6,7 @@ package entidades;
 
 /**
  *
- * @author mk
+ * @author 08050431
  */
 public interface DAO {
     
