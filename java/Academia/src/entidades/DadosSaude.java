@@ -120,7 +120,4 @@ public class DadosSaude implements Comparable{
         DadosSaude ds = (DadosSaude)t;
         return this.dataRegistro.compareTo(ds.dataRegistro);
     }
-    
-    
-    
 }
