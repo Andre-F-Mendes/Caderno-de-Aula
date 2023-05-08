@@ -30,11 +30,7 @@ public class CadastroDadosPessoaHashMap implements DAO {
     public boolean excluir(Object obj) {
         if (obj != null && obj instanceof String) {
             String cpf = (String) obj;
-            Pessoa e = (Pessoa) pesquisar(cpf);
-            if (e!=null){
-                dados.remove(e);
-                return true;
-            }
+            return(dados.remove(cpf) !=null);
         }
         return false;
     }
@@ -51,17 +47,18 @@ public class CadastroDadosPessoaHashMap implements DAO {
     }
 
     @Override
+    //Em obj está o cpf
     public Object pesquisar(Object obj) {
-        if (obj != null && obj instanceof Pessoa) {
+        if (obj != null && obj instanceof String) {
             String cpf = (String) obj;
-            for(Map.Entry<String,Pessoa> linha : dados.entrySet()){
-                String chave = linha.getKey();
-                if(chave.equals(cpf)){
-                    return linha.getValue();
-                }
-            }
+            return dados.get(cpf);
         }
         return null;
     }
     
+    public void listar() {
+        for (Map.Entry<String, Pessoa> linha : dados.entrySet()) {
+            System.out.println(linha);
+        }
+    }    
 }
