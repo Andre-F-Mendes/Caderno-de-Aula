@@ -9,6 +9,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+        }
+
         body {
             background-image: url(fundo_estrela.jpg);
             background-repeat: no-repeat;
@@ -16,111 +21,158 @@
             margin-top: 0%;
             margin-bottom: 0%;
         }
-        #video {
-            
+
+        #planeta {
+            width: 10%;
         }
+
+        #bloco_textos {
+            padding-left: 10px;
+        }
+
         #bloco {
             background-color: #1da2d8;
             margin: auto;
-            width: 1520px;
-            height: 120vh;
+            width: 80vw;
+            min-height: 100vh;
+
         }
 
         #tituloPrincipal {
             font-family: "Ink Free", sans-serif;
-            text-align: center;
             color: black;
             font-weight: bolder;
-            margin: 0%;
+            font-size: 30px;
+            border-bottom-style: ridge;
+            border-color: #1781ab;
+            background-color: #1781ab;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding-left: 2%;
 
         }
+
+        iframe {
+            width: 60%;
+            height: 400px;
+        }
+
+        #video {
+            margin-top: 2%;
+            width: 100%;
+
+            display: inline-flex;
+            justify-content: center;
+
+        }
+
+        h2 {
+            font-family: "Mv Boli", sans-serif;
+            font-size: 50px;
+            text-align: center;
+            color: black;
+            margin-top: 1%;
+        }
+
         .titulos {
             font-family: "Mv Boli", sans-serif;
+            font-size: 50px;
+            padding-left: 18.5%;
             color: black;
-
+            margin-top: 1%;
         }
+
         .textos {
             color: #303030;
+            font-size: larger;
+            text-align: justify;
+            padding: 0 20% 2%;
         }
     </style>
 </head>
 
 <body>
-
     <div id="bloco">
-        <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/DrDm7uO4Fu0?rel=0" frameborder="0" allowfullscreen align="right"></iframe>
+        <div id="tituloPrincipal">
+            <img id="planeta" src="terra.png">
+            <h1>Olá Terra!</h1>
+        </div>
 
-        <h1 id="tituloPrincipal">Olá Terra!</h1>
+        <div id="bloco_textos">
+            <h2>Alguns poucos fatos sobre o mundo que vivemos!</h2>
 
-        <h2 class="titulos">Alguns poucos fatos sobre o mundo que vivemos!</h2>
+            <p class="textos">A Terra é o terceiro planeta do Sol e é o maior dos planetas terrestres. A Terra é o único
+                planeta em
+                nosso
+                sistema solar a não ser nomeado após uma deidade grega ou romana. A Terra foi formada há aproximadamente
+                4,54 bilhões de anos e é o único planeta conhecido para sustentar a vida.
+            </p>
+            <div id="video">
+                <iframe src="https://www.youtube.com/embed/DrDm7uO4Fu0?rel=0" frameborder="0" allowfullscreen></iframe>
+            </div>
 
-        <img src="terra.png" width="400">
+            <h3 class="titulos">Sobre a terra</h3>
 
-        <p>A Terra é o terceiro planeta do Sol e é o maior dos planetas terrestres. A Terra é o único planeta em nosso
-            sistema solar a não ser nomeado após uma deidade grega ou romana. A Terra foi formada há aproximadamente
-            4,54 bilhões de anos e é o único planeta conhecido para sustentar a vida.
-        </p>
+            <ul class="textos">
 
-        <h3 class="titulos">Sobre a terra</h3>
+                <li>Massa: 5,972,190,000,000,000 billion kg</li>
+                <li>Equatorial Diâmetro: 12,756 km</li>
+                <li>Lua: <a href="http://space-facts.com/the-moon/">A Lua</a></li>
 
-        <ul>
-
-            <li>Massa: 5,972,190,000,000,000 billion kg</li>
-            <li>Equatorial Diâmetro: 12,756 km</li>
-            <li>Lua: <a href="http://space-facts.com/the-moon/">A Lua</a></li>
-
-        </ul>
-
-
-        <h3 class="titulos">3 Fatos Top sobre a Terra</h3>
-
-        <ol>
-
-            <li>A rotação da lua é gradualmente realizada</li>
-            <li>Acreditava tempos atrás que a terra era o centro do universo</li>
-            <li>A terra tem um grande campo gravitacional</li>
-
-        </ol>
+            </ul>
 
 
-        <table>
+            <h3 class="titulos">3 Fatos Top sobre a Terra</h3>
 
-            <thead>
+            <ol class="textos">
 
-                <tr>
+                <li>A rotação da lua é gradualmente realizada</li>
+                <li>Acreditava tempos atrás que a terra era o centro do universo</li>
+                <li>A terra tem um grande campo gravitacional</li>
 
-                    <th>Nome</th>
-                    <th>Raio</th>
-                    <th>Temperatura<br>Média</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Marte</td>
-                    <td>3,403km</td>
-                    <td>-46&deg;c</td>
-
-                </tr>
-
-                <tr>
-                    <td>Venus</td>
-                    <td>6,052km</td>
-                    <td>462&deg;c</td>
-
-                </tr>
-
-            </tbody>
-
-        </table>
+            </ol>
 
 
-        <form action="http://space-facts.com/earth/">
-            <p>Quer saber mais?</p>
-            <p><input type="submit" value="Clique aqui!"></p>
+            <table class="textos">
 
-            <p>Material Adaptado: curso codestar.com
-                Adapted material from codestar.com</p>
-        </form>
+                <thead>
+
+                    <tr>
+
+                        <th>Nome</th>
+                        <th>Raio</th>
+                        <th>Temperatura<br>Média</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Marte</td>
+                        <td>3,403km</td>
+                        <td>-46&deg;c</td>
+
+                    </tr>
+
+                    <tr>
+                        <td>Venus</td>
+                        <td>6,052km</td>
+                        <td>462&deg;c</td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+
+            <form class="textos" action="http://space-facts.com/earth/">
+                <p>Quer saber mais?</p>
+                <p><input type="submit" value="Clique aqui!"></p>
+
+                <p>Material Adaptado: curso codestar.com
+                    Adapted material from codestar.com</p>
+            </form>
+        </div>
     </div>
 </body>
 
