@@ -5,6 +5,7 @@
 package model.beans;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 /**
  *
@@ -15,35 +16,53 @@ public class Produtora {
     private final LocalDate dataCriacao;
 
     public Produtora(String nome, String localizacao, String ceo, LocalDate dataCriacao) {
-        this.nome = nome;
-        this.localizacao = localizacao;
-        this.ceo = ceo;
+        setNome(nome);
+        setLocalizacao(localizacao);
+        setCeo(ceo);
         this.dataCriacao = dataCriacao;
+        
     }
-    
+    public LocalDate getDataCriacao() {
+        return dataCriacao;
+    }
     public String getNome() {
-        try
         return nome;
     }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
     public String getLocalizacao() {
         return localizacao;
     }
-
-    public void setLocalizacao(String localizacao) {
-        this.localizacao = localizacao;
-    }
-
     public String getCeo() {
         return ceo;
     }
-
-    public void setCeo(String ceo) {
-        this.ceo = ceo;
+    public void setNome(String nome) {
+        if(nome == null) System.out.println("Uepaaaa");
+        try {
+            this.nome = nome;    
+        } catch (Exception e) {
+            Objects.requireNonNull(nome, "Valor inválido:" + e);
+        }
     }
+    public void setLocalizacao(String localizacao) {
+        try {
+            this.localizacao = localizacao;
+        } catch (Exception e) {
+            Objects.requireNonNull(localizacao, "Valor inválido:" + e);
+        }
+    }
+    public void setCeo(String ceo) {
+
+        try {
+            this.ceo = ceo;
+        } catch (Exception e) {
+            Objects.requireNonNull(localizacao, "Valor inválido:" + e);
+        }
+    }
+
+    public static void main(String[] args) {
+        
+        Produtora p = new Produtora(123, null, null, null);
+
+    }
+    
     
 }
