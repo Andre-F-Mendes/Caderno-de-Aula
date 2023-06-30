@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css" media="screen"/>
+    <title>Atividade</title>
+</head>
+<body>
+    <h1>Preencha o fomrulário abaixo:</h1>
+    <form method="post" action="https://httpbin.org/post">
+            <labeL for="nome">Nome: </labeL>
+            <input id="nome" type="text" required class=""><br><br>
+
+            <labeL for="sobrenome">Sobrenome: </labeL>
+            <input id="sobrenome" type="text" required class=""><br><br>
+
+            <labeL for="email">Email: </labeL>
+            <input id="email" type="email" required class=""><br><br>
+
+            <label for="cidade">Cidade: </label>
+            <input id="cidade" type="text" required><br><br>
+
+            <label for="estado">Estado: </label>
+            <select id="esstado" name="estado" required>
+                <option>Ação e aventura</option>
+                <option>Distopia</option>
+                <option>Romance</option>
+                <option>Suspense</option>
+                <option>Horror</option>
+                <option>Fantasia</option>
+                <option>Ficção científica</option>
+                <option>Ficção histórica</option>
+                <option>Filosofia</option>
+                <option>História</option>
+                <option>Horror</option>
+                <option>Infantil</option>
+                <option>Romance</option>
+                <option>Suspense</option>
+                <option>Tecnologia e Ciência</option>
+                <option>Outro</option>
+            </select><br><br>
+            
+            <labeL for="nascimento">Data de nascimento: </labeL>
+            <input id="nascimento" type="date" required class=""><br><br>
+            
+            <labeL for="tipoSanguineo">Tipo sanguíneo: </labeL>
+            <input id="tipoSanguineo" type="text" required class=""><br><br>
+            
+            <labeL for="cpf">CPF: </labeL>
+            <input id="cpf" type="text" maxlength="14" minlength="14" placeholder="xxx.xxx.xxx-xx" required pattern="[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}"><br><br>
+            
+            <labeL for="telefone">Telefone celular: </labeL>
+            <input id="telefone" type="tel" maxlength="14" minlength="14" required placeholder="(xx)xxxxx-xxxx"><br><br>
+            
+            <button type="submit" class="botaoProd">Cadastrar</button>
+            <button type="reset" class="botaoProd">Limpar</button>
+    </form>
+</body>
+</html>

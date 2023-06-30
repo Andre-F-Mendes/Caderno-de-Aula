@@ -1,0 +1,28 @@
+body{
+    background-color: yellow;
+}
+
+input, select{
+    background-color: green;
+    color: blue;
+}
+
+label, h1{
+    color: blue;
+    font-family:fantasy;
+}
+
+button{
+    background-color: blue;
+    font-size: 1.2em;
+    height: 1.8em;
+    width: 130px;
+    border-radius: 10px;
+    color: white;
+    border: none;
+}
+
+button:hover{
+    cursor: pointer;
+    background-color: red;
+}
