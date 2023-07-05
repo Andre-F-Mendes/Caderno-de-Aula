@@ -1,28 +1,16 @@
+*{
+    font-family: "", sans-serif;
+}
 body{
-    background-color: yellow;
+    background-color: #1e2124;
+    
 }
-
-input, select{
-    background-color: green;
-    color: blue;
+#formulario{
+    background-color: #424549;
+    margin: auto;
+    height: 80vh;
+    width: 50vw;
 }
-
-label, h1{
-    color: blue;
-    font-family:fantasy;
-}
-
-button{
-    background-color: blue;
-    font-size: 1.2em;
-    height: 1.8em;
-    width: 130px;
-    border-radius: 10px;
-    color: white;
-    border: none;
-}
-
-button:hover{
-    cursor: pointer;
-    background-color: red;
+form{
+    
 }

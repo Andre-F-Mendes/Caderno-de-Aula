@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+</head>
+
+<body>
+    <!--     1) Coletar os dados de usuários: nome, sobrenome, email, cidade, estado, data de nascimento, tipo sanguineo, cpf e telefone celular.
+ -->
+    <form action="https://httpbin.org/post" method="get">
+        <label for="fname">Nome:<br></label>
+        <input type="text" name="fname" id="fname" placeholder="Digite seu nome aqui">
+        <label for="sname"><br>Sobrenome:<br></label>
+        <input type="text" name="sname" id="sname" placeholder="Digite seu sobrenome aqui">
+        <label for="email"><br>Email:<br></label>
+        <input type="email" name="email" id="email" placeholder="Digite seu email aqui">
+        <label for="estado"><br>Estado:</label>
+        <select name="estado" id="estado">
+            <option value="AM"> AM </option>
+            <option value="AC"> AC</option>
+            <option value="AL"> AL </option>
+            <option value="AP"> AP </option>
+            <option value="BA"> BA </option>
+            <option value="CE"> CE </option>
+            <option value="DF"> DF </option>
+            <option value="ES"> ES </option>
+            <option value="GO"> GO </option>
+            <option value="MA"> MA </option>
+            <option value="MT"> MT </option>
+            <option value="MS"> MS </option>
+            <option value="MG"> MG </option>
+            <option value="PA"> PA </option>
+            <option value="PB"> PB </option>
+            <option value="PR"> PR </option>
+            <option value="PE"> PE </option>
+            <option value="PI"> PI </option>
+            <option value="RJ"> RJ </option>
+            <option value="RN"> RN </option>
+            <option value="RS"> RS </option>
+            <option value="RO"> RO </option>
+            <option value="RR"> RR </option>
+            <option value="SC"> SC </option>
+            <option value="SP"> SP </option>
+            <option value="SE"> SE </option>
+            <option value="TO"> TO </option>
+        </select>
+        <label for="cidade">Cidade:</label>
+        <input type="text" name="cidade" id="cidade" placeholder="Digite sua cidade aqui">
+        <label for="birthdate"><br>Data de Nascimento:</label>
+        <input type="date" name="birthdate" id="birthdate">
+        <label for="sangue"><br>Tipo Sanguineo:</label>
+        <select name="sangue" id="sangue">
+            <option selected hidden>Tipo</option>
+            <optgroup label="Positivo">
+                <option value="A+">A</option>
+                <option value="B+">B</option>
+                <option value="AB+">AB</option>
+                <option value="O+">O</option>
+            </optgroup>
+            <optgroup label="Negativo">
+                <option value="A-">A</option>
+                <option value="B-">B</option>
+                <option value="AB-">AB</option>
+                <option value="O-">O</option>
+            </optgroup>
+        </select>
+        <label for="cpf"><br>CPF:<br></label>
+        <input type="text" name="cpf" id="cpf" placeholder="xxx.xxx.xxx-xx">
+        <label for="tel"><br>Telefone:<br></label>
+        <input type="tel" name="tel" id="tel" placeholder="(xx) xxxxx-xxxx">
+    </form>
+</body>
+
+</html>
