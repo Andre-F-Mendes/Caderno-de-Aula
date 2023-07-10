@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/login.css">
+
+    <title>Login</title>
+
+</head>
+
+<body>
+    
+    <div id="login">
+        <form action="https://httpbin.org/post" method="post">
+            <div class="textos">
+                <label for="login_box">Login</label>
+                <input type="email" name="email" id="login_box">
+            </div>
+            <div class="textos">
+                <label for="senha">Senha</label>
+                <input type="password" name="senha" id="senha">
+            </div>
+            <input type="submit" value="Entrar">
+            <a id="EsqueciSenha" href="http://">Esqueci a senha.</a>
+            <a id="SemCadastro" href="http://">Não possui cadastro? Faça aqui!</a>
+
+        </form>
+    </div>
+</body>
+
+</html>
