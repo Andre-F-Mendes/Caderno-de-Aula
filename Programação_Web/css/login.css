@@ -1,0 +1,24 @@
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#login{
+    padding: 2rem;
+    border-radius: 5%;
+    box-sizing:border-box;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+    background-color: tomato;
+}
+#login form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
