@@ -1,6 +1,8 @@
 let idade = 0;
 
 
+idade = prompt(parseInt("Digite sua idade"));
+
 if (idade < 16) {
     console.log("Não pode entrar no evento.");
 
