@@ -1,12 +1,33 @@
 <!DOCTYPE html>
 <html lang="pt-Br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercuio 2</title>
     <link rel="stylesheet" href="../js/Exercicio2.js">
 </head>
+
 <body>
-    
+    <script>
+        let idade = 0;
+
+        idade = prompt(parseInt("Digite sua idade"));
+        
+        if (idade < 16) {
+            console.log("Não pode entrar no evento.");
+
+        } else if (idade >= 16 && idade < 18) {
+            console.log("Pode entrar no evento, porém não pode beber.");
+
+        }
+        else {
+            console.log("Pode entrar no evento e beber.");
+
+        }
+
+        console.log("Se beber, não dirija!");
+    </script>
 </body>
+
 </html>
