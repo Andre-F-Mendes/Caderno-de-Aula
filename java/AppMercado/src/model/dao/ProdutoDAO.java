@@ -31,14 +31,13 @@ public class ProdutoDAO implements DAO{
     
     @Override
     public boolean create(Object obj) {
-        if(obj != null && obj instanceof Produto){
+        Objects.requireNonNull(obj);
+        if(obj instanceof Produto){
             Produto p = (Produto) obj;
-            int id = this.dados.size() + 1;
-            if(!dados.containsValue(p)){
-                p.setId(id);
+            if(read(p.getId()) == null){
                 dados.put(p.getId(), p);
                 return true;
-            }
+            }else return false;
         }
         return false;
     }

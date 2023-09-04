@@ -10,14 +10,16 @@ import java.util.Objects;
 public class Produto {
     
     private int id, quantidade;
-    private String nome, descricao;
+    private String nome, descricao, marca;
     private double preco;
     private Tipo tipo;
     
     public Produto() {
     }
 
-    public Produto(String nome, String descricao, int quantidade, double preco, Tipo tipo) {
+    public Produto(int id, String marca, String nome, String descricao, int quantidade, double preco, Tipo tipo) {
+        setId(id);
+        setMarca(marca);
         setNome(nome);
         setDescricao(descricao);
         setQuantidade(quantidade);
@@ -31,7 +33,7 @@ public class Produto {
 
     public void setId(int id) {
         if(id < 0){
-            throw new IllegalArgumentException("Id não pode ser negativo");
+            throw new IllegalArgumentException("ID não pode ser negativo");
         }
         this.id = id;
     }
@@ -41,7 +43,7 @@ public class Produto {
     }
 
     public void setQuantidade(int quantidade) {
-        if(quantidade < 0){
+        if(id < 0){
             throw new IllegalArgumentException("Quantidade não pode ser negativa");
         }
         this.quantidade = quantidade;
@@ -65,12 +67,21 @@ public class Produto {
         this.descricao = descricao;
     }
 
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        Objects.requireNonNull(marca);
+        this.marca = marca;
+    }
+
     public double getPreco() {
         return preco;
     }
 
     public void setPreco(double preco) {
-        if(preco < 0){
+        if(preco < 0.0){
             throw new IllegalArgumentException("Preço não pode ser negativo");
         }
         this.preco = preco;
@@ -87,7 +98,7 @@ public class Produto {
 
     @Override
     public String toString() {
-        return "Produto{" + "id=" + getId() + ", nome= " + getNome() + ", tipo=" + getTipo().getTipoProduto() + ", descri\u00e7\u00e3o=" + getDescricao() + ", pre\u00e7o=" + getPreco() + ", quantidade=" + getQuantidade() + "}\n";
+        return "Produto{" + "id=" + getId() + ", marca=" + getMarca() + ", nome= " + getNome() + ", tipo=" + getTipo().getTipoProduto() + ", descri\u00e7\u00e3o=" + getDescricao() + ", pre\u00e7o=" + getPreco() + ", quantidade=" + getQuantidade() + "}\n";
     }
 
     @Override
