@@ -10,6 +10,8 @@ import util.UnidadeFederacao;
 public class EnderecoTeste {
     public static void main(String[] args) {
         
+        
+        
         Endereco endereco = new Endereco("Casa", "Brasil",
                 "Capão da canoa", "Santa Luzia", "Rua Dona Alice", 115, UnidadeFederacao.RIO_GRANDE_DO_SUL);
         

@@ -1,5 +1,6 @@
 package model.entity;
 
+import util.Tipo;
 import java.util.Objects;
 
 

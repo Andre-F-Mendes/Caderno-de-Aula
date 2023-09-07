@@ -139,6 +139,9 @@ public class Endereco {
 
     @Override
     public String toString() {
-        return "Endereco{" + "nome=" + nome + ", pais=" + pais + ", cidade=" + cidade + ", bairro=" + bairro + ", rua=" + rua + ", numero=" + numero + ", estado=" + estado + '}';
+        return "Endereço: " + getNome() +
+                "\nPais: " + getPais() + "\nEstado: " + getEstado() +
+                "\nCidade: " + getCidade() + "\nBairro: " + getBairro() +
+                "\nRua: " + getRua() + "\nNúmero: " + getNumero();
     }
 }

@@ -4,7 +4,7 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.entity.Produto;
-import model.entity.Tipo;
+import util.Tipo;
 import model.dao.ProdutoDAO;
 
 /**
@@ -344,7 +344,7 @@ public class TelaAdministraProduto extends javax.swing.JFrame {
         int quantidade = Integer.parseInt(quantidadeTextField.getText());
         double preco = Double.parseDouble(precoTextField.getText());
         String descricao = descricaoTextArea.getText();
-
+        
         Tipo tipo = Tipo.valueOf(tipoStr.toUpperCase().replace(" ", "_"));
 
         Produto novoProduto = new Produto(id, marca, nome, descricao, quantidade, preco, tipo);

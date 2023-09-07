@@ -2,7 +2,7 @@ package entity;
 
 import model.entity.ItensCarrinho;
 import model.entity.Produto;
-import model.entity.Tipo;
+import util.Tipo;
 
 
 /**

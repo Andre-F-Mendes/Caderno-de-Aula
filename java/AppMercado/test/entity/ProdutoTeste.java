@@ -1,7 +1,7 @@
 package entity;
 
 import model.entity.Produto;
-import model.entity.Tipo;
+import util.Tipo;
 
 /**
  *

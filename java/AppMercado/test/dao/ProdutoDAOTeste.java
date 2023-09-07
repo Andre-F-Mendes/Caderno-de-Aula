@@ -2,7 +2,7 @@ package dao;
 
 import model.dao.ProdutoDAO;
 import model.entity.Produto;
-import model.entity.Tipo;
+import util.Tipo;
 
 
 /**
