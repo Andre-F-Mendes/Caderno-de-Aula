@@ -6,6 +6,7 @@ import javax.swing.table.DefaultTableModel;
 import model.entity.Produto;
 import util.Tipo;
 import model.dao.ProdutoDAO;
+import model.entity.Endereco;
 import util.UnidadeFederacao;
 
 /**
@@ -267,7 +268,7 @@ public class TelaCadastraEndereço extends javax.swing.JFrame {
     }//GEN-LAST:event_estadoComboBoxActionPerformed
 
     private void atualizarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atualizarBtnActionPerformed
-        atualizarProduto();
+//        atualizarProduto();;
     }//GEN-LAST:event_atualizarBtnActionPerformed
 
     /**
@@ -347,22 +348,23 @@ public class TelaCadastraEndereço extends javax.swing.JFrame {
         int numero = Integer.parseInt(numeroTextField.getText());
 
         UnidadeFederacao unidade = UnidadeFederacao.valueOf(estadoStr.toUpperCase());
-//        Tipo tipo = Tipo.valueOf(tipoStr.toUpperCase().replace(" ", "_"));
-
+        
+        Endereco endereco = new Endereco(nome, pais, cidade, bairro, rua, numero, unidade);
        
-        if (prdao.update(novoProduto)) {
-            idTextField.setText("");
-            paisTextField.setText("");
-            nomeTextField.setText("");
-            estadoComboBox.setSelectedIndex(0);
-            cidadeTextField.setText("");
-            bairroTextField.setText("");
-            descricaoTextArea.setText("");
-
-            atualizarTabelaProdutos();
-        } else {
-            JOptionPane.showMessageDialog(this, "Erro ao atualizar o produto.");
-        }
+       
+//        if (prdao.update(novoProduto)) {
+//            idTextField.setText("");
+//            paisTextField.setText("");
+//            nomeTextField.setText("");
+//            estadoComboBox.setSelectedIndex(0);
+//            cidadeTextField.setText("");
+//            bairroTextField.setText("");
+//            descricaoTextArea.setText("");
+//
+//            atualizarTabelaProdutos();
+//        } else {
+//            JOptionPane.showMessageDialog(this, "Erro ao atualizar o produto.");
+//        }
     }
 
     private void deletarProduto() {
@@ -382,31 +384,31 @@ public class TelaCadastraEndereço extends javax.swing.JFrame {
     }
 
     private void cadastrarProduto() {
-        int id = Integer.parseInt(idTextField.getText());
-        String marca = paisTextField.getText();
-        String nome = nomeTextField.getText();
-        String tipoStr = (String) estadoComboBox.getSelectedItem();
-        int quantidade = Integer.parseInt(cidadeTextField.getText());
-        double preco = Double.parseDouble(bairroTextField.getText());
-        String descricao = descricaoTextArea.getText();
-
-        Tipo tipo = Tipo.valueOf(tipoStr.toUpperCase().replace(" ", "_"));
-
-        Produto novoProduto = new Produto(id, marca, nome, descricao, quantidade, preco, tipo);
-
-        if (prdao.create(novoProduto)) {
-            idTextField.setText("");
-            paisTextField.setText("");
-            nomeTextField.setText("");
-            estadoComboBox.setSelectedIndex(0);
-            cidadeTextField.setText("");
-            bairroTextField.setText("");
-            descricaoTextArea.setText("");
-
-            atualizarTabelaProdutos();
-        } else {
-            JOptionPane.showMessageDialog(this, "Erro ao cadastrar o produto.");
-        }
+//        int id = Integer.parseInt(idTextField.getText());
+//        String marca = paisTextField.getText();
+//        String nome = nomeTextField.getText();
+//        String tipoStr = (String) estadoComboBox.getSelectedItem();
+//        int quantidade = Integer.parseInt(cidadeTextField.getText());
+//        double preco = Double.parseDouble(bairroTextField.getText());
+//        String descricao = descricaoTextArea.getText();
+//
+//        Tipo tipo = Tipo.valueOf(tipoStr.toUpperCase().replace(" ", "_"));
+//
+//        Produto novoProduto = new Produto(id, marca, nome, descricao, quantidade, preco, tipo);
+//
+//        if (prdao.create(novoProduto)) {
+//            idTextField.setText("");
+//            paisTextField.setText("");
+//            nomeTextField.setText("");
+//            estadoComboBox.setSelectedIndex(0);
+//            cidadeTextField.setText("");
+//            bairroTextField.setText("");
+//            descricaoTextArea.setText("");
+//
+//            atualizarTabelaProdutos();
+//        } else {
+//            JOptionPane.showMessageDialog(this, "Erro ao cadastrar o produto.");
+//        }
     }
 
     private void preencherComboBoxTipo() {
