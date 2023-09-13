@@ -6,12 +6,13 @@ import javax.swing.table.DefaultTableModel;
 import model.entity.Produto;
 import util.Tipo;
 import model.dao.ProdutoDAO;
+import util.UnidadeFederacao;
 
 /**
  *
  * @author andre
  */
-public class TelaAdministraProduto extends javax.swing.JFrame {
+public class TelaCadastraEndereço extends javax.swing.JFrame {
 
     private ProdutoDAO prdao = ProdutoDAO.getInstance();
     private DefaultTableModel tableModel;
@@ -19,7 +20,7 @@ public class TelaAdministraProduto extends javax.swing.JFrame {
     /**
      * Creates new form TelaAdministraProduto
      */
-    public TelaAdministraProduto() {
+    public TelaCadastraEndereço() {
         initComponents();
 
         preencherComboBoxTipo();
@@ -41,19 +42,18 @@ public class TelaAdministraProduto extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         nomeLabel = new javax.swing.JLabel();
         nomeTextField = new javax.swing.JFormattedTextField();
-        tipoLabel = new javax.swing.JLabel();
-        tipoComboBox = new javax.swing.JComboBox<>();
-        quantidadeLabel = new javax.swing.JLabel();
-        quantidadeTextField = new javax.swing.JFormattedTextField();
-        descricaoLabel = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        descricaoTextArea = new javax.swing.JTextArea();
-        marcaTextField = new javax.swing.JFormattedTextField();
-        marcaLabel = new javax.swing.JLabel();
-        idTextField = new javax.swing.JFormattedTextField();
-        precoLabel = new javax.swing.JLabel();
-        precoTextField = new javax.swing.JFormattedTextField();
-        idLabel = new javax.swing.JLabel();
+        paisLabel = new javax.swing.JLabel();
+        paisTextField = new javax.swing.JFormattedTextField();
+        estadoLabel = new javax.swing.JLabel();
+        estadoComboBox = new javax.swing.JComboBox<>();
+        cidadeLabel = new javax.swing.JLabel();
+        cidadeTextField = new javax.swing.JFormattedTextField();
+        bairroLabel = new javax.swing.JLabel();
+        bairroTextField = new javax.swing.JFormattedTextField();
+        ruaLabel = new javax.swing.JLabel();
+        ruaTextField = new javax.swing.JFormattedTextField();
+        numeroLabel = new javax.swing.JLabel();
+        numeroTextField = new javax.swing.JFormattedTextField();
         cadastrarBtn = new javax.swing.JButton();
         atualizarBtn = new javax.swing.JButton();
         deletarBtn = new javax.swing.JButton();
@@ -69,87 +69,85 @@ public class TelaAdministraProduto extends javax.swing.JFrame {
 
         nomeLabel.setText("Nome");
 
-        tipoLabel.setText("Tipo");
+        paisLabel.setText("País");
 
-        tipoComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        tipoComboBox.addActionListener(new java.awt.event.ActionListener() {
+        estadoLabel.setText("Estado");
+
+        estadoComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        estadoComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tipoComboBoxActionPerformed(evt);
+                estadoComboBoxActionPerformed(evt);
             }
         });
 
-        quantidadeLabel.setText("Quantidade");
+        cidadeLabel.setText("Cidade");
 
-        descricaoLabel.setText("Descrição");
+        bairroLabel.setText("Bairro");
 
-        descricaoTextArea.setColumns(20);
-        descricaoTextArea.setRows(5);
-        jScrollPane1.setViewportView(descricaoTextArea);
+        ruaLabel.setText("Rua");
 
-        marcaLabel.setText("Marca");
-
-        precoLabel.setText("Preço");
-
-        idLabel.setText("ID");
+        numeroLabel.setText("Número");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
+                .addGap(55, 55, 55)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(idTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(idLabel))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(nomeLabel)
+                        .addGap(92, 92, 92))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(nomeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(paisLabel)
+                    .addComponent(paisTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(marcaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(marcaLabel))
+                    .addComponent(estadoLabel)
+                    .addComponent(estadoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(nomeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nomeLabel))
+                    .addComponent(cidadeLabel)
+                    .addComponent(cidadeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(bairroTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bairroLabel))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(quantidadeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(quantidadeLabel))
+                    .addComponent(ruaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ruaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(precoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(precoLabel))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tipoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tipoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(descricaoLabel)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(78, Short.MAX_VALUE))
+                    .addComponent(numeroLabel)
+                    .addComponent(numeroTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(42, 42, 42)
+                .addGap(53, 53, 53)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(precoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tipoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(descricaoLabel)
-                    .addComponent(quantidadeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bairroLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ruaLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(cidadeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(estadoLabel)
+                    .addComponent(paisLabel)
                     .addComponent(nomeLabel)
-                    .addComponent(marcaLabel)
-                    .addComponent(idLabel))
+                    .addComponent(numeroLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(precoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(tipoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(quantidadeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(nomeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(marcaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(idTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bairroTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(estadoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cidadeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nomeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(paisTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ruaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(numeroTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(71, 71, 71))
         );
 
         cadastrarBtn.setText("Cadastrar");
@@ -188,7 +186,7 @@ public class TelaAdministraProduto extends javax.swing.JFrame {
                 .addComponent(deletarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(112, 112, 112)
                 .addComponent(atualizarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(278, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -203,14 +201,14 @@ public class TelaAdministraProduto extends javax.swing.JFrame {
                 .addContainerGap(17, Short.MAX_VALUE))
         );
 
-        jScrollPane2.setBorder(javax.swing.BorderFactory.createTitledBorder("Produtos"));
+        jScrollPane2.setBorder(javax.swing.BorderFactory.createTitledBorder("Endereços"));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "ID", "Marca", "Nome", "Tipo", "Quantidade", "Preço", "Descrição"
+                "Nome", "País", "Estado", "Cidade", "Bairro", "Rua", "Número"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -264,9 +262,9 @@ public class TelaAdministraProduto extends javax.swing.JFrame {
         deletarProduto();
     }//GEN-LAST:event_deletarBtnActionPerformed
 
-    private void tipoComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipoComboBoxActionPerformed
+    private void estadoComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_estadoComboBoxActionPerformed
 
-    }//GEN-LAST:event_tipoComboBoxActionPerformed
+    }//GEN-LAST:event_estadoComboBoxActionPerformed
 
     private void atualizarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atualizarBtnActionPerformed
         atualizarProduto();
@@ -289,14 +287,18 @@ public class TelaAdministraProduto extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaAdministraProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaCadastraEndereço.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaAdministraProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaCadastraEndereço.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaAdministraProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaCadastraEndereço.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaAdministraProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaCadastraEndereço.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -305,57 +307,56 @@ public class TelaAdministraProduto extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaAdministraProduto().setVisible(true);
+                new TelaCadastraEndereço().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton atualizarBtn;
+    private javax.swing.JLabel bairroLabel;
+    private javax.swing.JFormattedTextField bairroTextField;
     private javax.swing.JButton cadastrarBtn;
+    private javax.swing.JLabel cidadeLabel;
+    private javax.swing.JFormattedTextField cidadeTextField;
     private javax.swing.JButton deletarBtn;
-    private javax.swing.JLabel descricaoLabel;
-    private javax.swing.JTextArea descricaoTextArea;
-    private javax.swing.JLabel idLabel;
-    private javax.swing.JFormattedTextField idTextField;
+    private javax.swing.JComboBox<String> estadoComboBox;
+    private javax.swing.JLabel estadoLabel;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JProgressBar jProgressBar1;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
-    private javax.swing.JLabel marcaLabel;
-    private javax.swing.JFormattedTextField marcaTextField;
     private javax.swing.JLabel nomeLabel;
     private javax.swing.JFormattedTextField nomeTextField;
-    private javax.swing.JLabel precoLabel;
-    private javax.swing.JFormattedTextField precoTextField;
-    private javax.swing.JLabel quantidadeLabel;
-    private javax.swing.JFormattedTextField quantidadeTextField;
-    private javax.swing.JComboBox<String> tipoComboBox;
-    private javax.swing.JLabel tipoLabel;
+    private javax.swing.JLabel numeroLabel;
+    private javax.swing.JFormattedTextField numeroTextField;
+    private javax.swing.JLabel paisLabel;
+    private javax.swing.JFormattedTextField paisTextField;
+    private javax.swing.JLabel ruaLabel;
+    private javax.swing.JFormattedTextField ruaTextField;
     // End of variables declaration//GEN-END:variables
 
-    private void atualizarProduto() {
-        int id = Integer.parseInt(idTextField.getText());
-        String marca = marcaTextField.getText();
+    private void atualizarEndereco() {
         String nome = nomeTextField.getText();
-        String tipoStr = (String) tipoComboBox.getSelectedItem();
-        int quantidade = Integer.parseInt(quantidadeTextField.getText());
-        double preco = Double.parseDouble(precoTextField.getText());
-        String descricao = descricaoTextArea.getText();
-        
-        Tipo tipo = Tipo.valueOf(tipoStr.toUpperCase().replace(" ", "_"));
+        String pais = paisTextField.getText();
+        String estadoStr = (String) estadoComboBox.getSelectedItem();
+        String cidade = cidadeTextField.getText();
+        String bairro = bairroTextField.getText();
+        String rua = ruaTextField.getText();
+        int numero = Integer.parseInt(numeroTextField.getText());
 
-        Produto novoProduto = new Produto(id, marca, nome, descricao, quantidade, preco, tipo);
-        
+        UnidadeFederacao unidade = UnidadeFederacao.valueOf(estadoStr.toUpperCase());
+//        Tipo tipo = Tipo.valueOf(tipoStr.toUpperCase().replace(" ", "_"));
+
+       
         if (prdao.update(novoProduto)) {
             idTextField.setText("");
-            marcaTextField.setText("");
+            paisTextField.setText("");
             nomeTextField.setText("");
-            tipoComboBox.setSelectedIndex(0);
-            quantidadeTextField.setText("");
-            precoTextField.setText("");
+            estadoComboBox.setSelectedIndex(0);
+            cidadeTextField.setText("");
+            bairroTextField.setText("");
             descricaoTextArea.setText("");
 
             atualizarTabelaProdutos();
@@ -382,11 +383,11 @@ public class TelaAdministraProduto extends javax.swing.JFrame {
 
     private void cadastrarProduto() {
         int id = Integer.parseInt(idTextField.getText());
-        String marca = marcaTextField.getText();
+        String marca = paisTextField.getText();
         String nome = nomeTextField.getText();
-        String tipoStr = (String) tipoComboBox.getSelectedItem();
-        int quantidade = Integer.parseInt(quantidadeTextField.getText());
-        double preco = Double.parseDouble(precoTextField.getText());
+        String tipoStr = (String) estadoComboBox.getSelectedItem();
+        int quantidade = Integer.parseInt(cidadeTextField.getText());
+        double preco = Double.parseDouble(bairroTextField.getText());
         String descricao = descricaoTextArea.getText();
 
         Tipo tipo = Tipo.valueOf(tipoStr.toUpperCase().replace(" ", "_"));
@@ -395,11 +396,11 @@ public class TelaAdministraProduto extends javax.swing.JFrame {
 
         if (prdao.create(novoProduto)) {
             idTextField.setText("");
-            marcaTextField.setText("");
+            paisTextField.setText("");
             nomeTextField.setText("");
-            tipoComboBox.setSelectedIndex(0);
-            quantidadeTextField.setText("");
-            precoTextField.setText("");
+            estadoComboBox.setSelectedIndex(0);
+            cidadeTextField.setText("");
+            bairroTextField.setText("");
             descricaoTextArea.setText("");
 
             atualizarTabelaProdutos();
@@ -409,9 +410,9 @@ public class TelaAdministraProduto extends javax.swing.JFrame {
     }
 
     private void preencherComboBoxTipo() {
-        tipoComboBox.removeAllItems();
+        estadoComboBox.removeAllItems();
         for (Tipo tipo : Tipo.values()) {
-            tipoComboBox.addItem(tipo.getTipoProduto());
+            estadoComboBox.addItem(tipo.getTipoProduto());
         }
     }
 
