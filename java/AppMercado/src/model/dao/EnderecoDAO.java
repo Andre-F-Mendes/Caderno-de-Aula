@@ -1,6 +1,6 @@
 package model.dao;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Objects;
 import model.entity.Endereco;
 
@@ -25,14 +25,17 @@ public class EnderecoDAO implements DAO{
         
     }
     
-    ArrayList<Endereco> dados = new ArrayList<>();
+    HashMap<String, Endereco> dados = new HashMap<>();
     
     @Override
     public boolean create(Object obj) {
         Objects.requireNonNull(obj);
         if(obj instanceof Endereco){
-            Endereco endereco = (Endereco) obj;
-            if()
+            Endereco e = (Endereco) obj;
+            if(!dados.containsKey(e.getNome()) && !dados.containsValue(e)){
+                dados.put(e.getNome(), e);
+                return true;
+            }else return false;
         }
         return false;
         
