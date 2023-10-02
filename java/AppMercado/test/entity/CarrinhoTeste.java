@@ -5,7 +5,6 @@
 package entity;
 
 import model.entity.Carrinho;
-import model.entity.ItensCarrinho;
 import model.entity.Produto;
 import util.Tipo;
 
@@ -25,7 +24,9 @@ public class CarrinhoTeste {
         carrinho.addLista(produto, 10);
         carrinho.addLista(produto1, 2);
         
-        carrinho.exibirLista();
+        System.out.println(carrinho.exibirLista());
+        
+      
         
         
     }

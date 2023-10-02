@@ -13,7 +13,7 @@ import model.dao.ProdutoDAO;
  */
 public class TelaAdministraProduto extends javax.swing.JFrame {
 
-    private ProdutoDAO prdao = ProdutoDAO.getInstance();
+    private ProdutoDAO prdao; 
     private DefaultTableModel tableModel;
 
     /**
@@ -21,7 +21,9 @@ public class TelaAdministraProduto extends javax.swing.JFrame {
      */
     public TelaAdministraProduto() {
         initComponents();
-
+        
+        prdao = ProdutoDAO.getInstance();
+        
         preencherComboBoxTipo();
         configurarTabela();
         atualizarTabelaProdutos();

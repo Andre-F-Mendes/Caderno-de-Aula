@@ -17,13 +17,13 @@ public class Endereco {
     }
 
     public Endereco(String nome, String pais, String cidade, String bairro, String rua, int numero, UnidadeFederacao estado) {
-        this.nome = nome;
-        this.pais = pais;
-        this.cidade = cidade;
-        this.bairro = bairro;
-        this.rua = rua;
-        this.numero = numero;
-        this.estado = estado;
+        setNome(nome);
+        setPais(pais);
+        setCidade(cidade);
+        setBairro(bairro);
+        setRua(rua);
+        setNumero(numero);
+        setEstado(estado);
     }
 
     public String getNome() {
@@ -105,36 +105,15 @@ public class Endereco {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
+    public boolean equals(Object obj){
+        if(this == obj){
             return true;
         }
-        if (obj == null) {
+        if(obj == null || getClass() != obj.getClass()){
             return false;
         }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Endereco other = (Endereco) obj;
-        if (this.numero != other.numero) {
-            return false;
-        }
-        if (!Objects.equals(this.nome, other.nome)) {
-            return false;
-        }
-        if (!Objects.equals(this.pais, other.pais)) {
-            return false;
-        }
-        if (!Objects.equals(this.cidade, other.cidade)) {
-            return false;
-        }
-        if (!Objects.equals(this.bairro, other.bairro)) {
-            return false;
-        }
-        if (!Objects.equals(this.rua, other.rua)) {
-            return false;
-        }
-        return this.estado == other.estado;
+        Endereco endereco = (Endereco) obj;
+        return Objects.equals(nome, endereco.nome);
     }
 
     @Override

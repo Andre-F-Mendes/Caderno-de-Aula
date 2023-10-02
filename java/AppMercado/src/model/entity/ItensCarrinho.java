@@ -7,8 +7,10 @@ import java.util.Objects;
  * @author andre
  */
 public class ItensCarrinho {
+    private double totalProduto = 0.0;
     private Produto produto;
     private int quantidade;
+    
     
     public ItensCarrinho(){
         
@@ -18,7 +20,15 @@ public class ItensCarrinho {
         setProduto(produto);
         setQuantidade(quantidade);
     }
+    
+    public double calcProduto(){
+        double d = getProduto().getPreco() * getQuantidade();
+        
 
+        totalProduto = d;
+        return totalProduto;
+    }
+    
     public Produto getProduto() {
         return produto;
     }

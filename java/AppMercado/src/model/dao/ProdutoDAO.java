@@ -10,34 +10,36 @@ import model.entity.Produto;
  *
  * @author andre
  */
-public class ProdutoDAO implements DAO{
-    
+public class ProdutoDAO implements DAO {
+
     private static ProdutoDAO prdao;
-    
+
     public static ProdutoDAO getInstance() {
         if (prdao == null) {
             prdao = new ProdutoDAO();
         }
-        return prdao;   
+        return prdao;
     }
-    
-     //É private para evitar que o PessoaDAO seja criado de outra forma que
+
+    //É private para evitar que o PessoaDAO seja criado de outra forma que
     // não seja através do método getInstance.
-    public ProdutoDAO(){
-        
+    public ProdutoDAO() {
+
     }
-    
+
     private HashMap<Integer, Produto> dados = new HashMap<>();
-    
+
     @Override
     public boolean create(Object obj) {
         Objects.requireNonNull(obj);
-        if(obj instanceof Produto){
+        if (obj instanceof Produto) {
             Produto p = (Produto) obj;
-            if(read(p.getId()) == null){
+            if (read(p.getId()) == null) {
                 dados.put(p.getId(), p);
                 return true;
-            }else return false;
+            } else {
+                return false;
+            }
         }
         return false;
     }
@@ -45,7 +47,7 @@ public class ProdutoDAO implements DAO{
     @Override
     public Object read(Object obj) {
         Objects.requireNonNull(obj);
-        if(obj instanceof Integer){
+        if (obj instanceof Integer) {
             Integer i = (Integer) obj;
             return dados.get(i);
         }
@@ -55,9 +57,9 @@ public class ProdutoDAO implements DAO{
     @Override
     public boolean update(Object obj) {
         Objects.requireNonNull(obj);
-        if(obj instanceof Produto){
+        if (obj instanceof Produto) {
             Produto p = (Produto) obj;
-            if(dados.containsKey(p.getId())){
+            if (dados.containsKey(p.getId())) {
                 dados.replace(p.getId(), p);
                 return true;
             }
@@ -68,16 +70,26 @@ public class ProdutoDAO implements DAO{
     @Override
     public boolean delete(Object obj) {
         Objects.requireNonNull(obj);
-        if(obj instanceof Integer){
+        if (obj instanceof Integer) {
             Integer i = (Integer) obj;
             return (dados.remove(i) != null);
         }
         return false;
     }
-    
+
     public List<Produto> listarProdutos() {
-    List<Produto> produtos = new ArrayList<>(dados.values());
-    return produtos;
-}
+        List<Produto> produtos = new ArrayList<>(dados.values());
+        return produtos;
+    }
     
+    public Produto fromMarcaNome(String marcaNome) {
+    for (Produto p : listarProdutos()) {
+      if (p.getMarcaNome().equalsIgnoreCase(marcaNome)) {
+        return p;
+      }
+    }
+
+    throw new IllegalArgumentException(marcaNome);
+  }
+
 }

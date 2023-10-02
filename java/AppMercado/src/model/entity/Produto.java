@@ -11,7 +11,7 @@ import java.util.Objects;
 public class Produto {
     
     private int id, quantidade;
-    private String nome, descricao, marca;
+    private String nome, descricao, marca, marcaNome;
     private double preco;
     private Tipo tipo;
     
@@ -26,8 +26,18 @@ public class Produto {
         setQuantidade(quantidade);
         setPreco(preco);
         setTipo(tipo);
+        setMarcaNome(getMarca(), getNome());
     }
 
+    public String getMarcaNome() {
+        return marcaNome;
+    }
+
+    public void setMarcaNome(String marca, String nome) {
+        this.marcaNome = marca + " " + nome;
+    }
+
+    
     public int getId() {
         return id;
     }
