@@ -5,7 +5,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.entity.Produto;
 import util.Tipo;
-import model.dao.ProdutoDAO;
+import persist.ProdutoDAO;
 import model.entity.Endereco;
 import util.UnidadeFederacao;
 

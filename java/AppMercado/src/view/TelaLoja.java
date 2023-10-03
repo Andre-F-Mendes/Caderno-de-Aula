@@ -7,7 +7,7 @@ package view;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
 import model.entity.Produto;
-import model.dao.ProdutoDAO;
+import persist.ProdutoDAO;
 
 /**
  *

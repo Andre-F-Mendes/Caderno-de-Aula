@@ -1,6 +1,6 @@
 package dao;
 
-import model.dao.ProdutoDAO;
+import persist.ProdutoDAO;
 import model.entity.Produto;
 import util.Tipo;
 

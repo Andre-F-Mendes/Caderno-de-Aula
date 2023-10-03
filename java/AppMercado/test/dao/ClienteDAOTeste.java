@@ -2,8 +2,8 @@ package dao;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import model.dao.ClienteDAO;
-import model.dao.PessoaDAO;
+import persist.ClienteDAO;
+import persist.PessoaDAO;
 import model.entity.Cliente;
 import model.entity.Endereco;
 import model.entity.Pessoa;

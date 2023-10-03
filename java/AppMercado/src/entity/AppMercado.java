@@ -1,10 +1,10 @@
-package model.entity;
+package entity;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import model.dao.AdministradorDAO;
-import model.dao.ClienteDAO;
-import model.dao.ProdutoDAO;
+import persist.AdministradorDAO;
+import persist.ClienteDAO;
+import persist.ProdutoDAO;
 import util.Tipo;
 import util.UnidadeFederacao;
 import view.*;

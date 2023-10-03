@@ -1,8 +1,8 @@
 package view;
 
 import javax.swing.JOptionPane;
-import model.dao.AdministradorDAO;
-import model.dao.ClienteDAO;
+import persist.AdministradorDAO;
+import persist.ClienteDAO;
 import model.entity.Administrador;
 import model.entity.AppMercado;
 import model.entity.Cliente;

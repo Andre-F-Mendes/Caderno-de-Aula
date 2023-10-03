@@ -2,7 +2,7 @@ package view;
 
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import model.dao.ProdutoDAO;
+import persist.ProdutoDAO;
 import model.entity.Carrinho;
 import model.entity.ItensCarrinho;
 import model.entity.Produto;

@@ -6,23 +6,62 @@ import java.util.Objects;
 
 /**
  *
- * @author Convidado
+ * @author andre
  */
 public class Pessoa {
-    
+
+    //relaciona o Usuário com a pessoa
+    private Usuario user;
+    //cpf será final pois uma pessoa tem apenas 1 cpf
+    private String cpf;
+    //relaciona o endereço com a pessoa
     private Endereco endereco;
-    private String nome, sobrenome, cpf;
+
+    private String nome, sobrenome;
+
     private LocalDate dataNascimento;
+
     private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
-    public Pessoa(String nome, String sobrenome, String cpf, LocalDate dataNascimento, Endereco endereco) {
+    public Pessoa(String cpf, String nome, String sobrenome, LocalDate dataNascimento, Endereco endereco) {
+        setCpf(cpf);
         setNome(nome);
         setSobrenome(sobrenome);
-        setCpf(cpf);
         setDataNascimento(dataNascimento);
         setEndereco(endereco);
     }
+    
+    public Pessoa(){
+        
+    }
+    
+    public Usuario getUser() {
+        return user;
+    }
 
+    public void setUser(Usuario user) {
+        Objects.requireNonNull(user);
+        this.user = user;
+    }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        Objects.requireNonNull(endereco);
+        this.endereco = endereco;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+    
+    public void setCpf(String cpf){
+        Objects.requireNonNull(cpf);
+        this.cpf = cpf;
+    }
+    
     public String getNome() {
         return nome;
     }
@@ -31,7 +70,7 @@ public class Pessoa {
         Objects.requireNonNull(nome);
         this.nome = nome;
     }
-    
+
     public String getSobrenome() {
         return sobrenome;
     }
@@ -39,16 +78,6 @@ public class Pessoa {
     public void setSobrenome(String sobrenome) {
         Objects.requireNonNull(sobrenome);
         this.sobrenome = sobrenome;
-    }
-
-    public String getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(String cpf) {
-        Objects.requireNonNull(cpf);
-        this.cpf = cpf;
-
     }
 
     public LocalDate getDataNascimento() {
@@ -59,25 +88,17 @@ public class Pessoa {
         return dataNascimento.format(formatter);
     }
 
-    public void setDataNascimento(LocalDate data) {
-        Objects.requireNonNull(data, "A data não pode ser nula");
-        this.dataNascimento = data;
+    public void setDataNascimento(LocalDate dataNascimento) {
+        Objects.requireNonNull(dataNascimento);
+        this.dataNascimento = dataNascimento;
     }
 
-    public Endereco getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(Endereco endereco) {
-        this.endereco = endereco;
-    }
-    
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 97 * hash + Objects.hashCode(this.nome);
         hash = 97 * hash + Objects.hashCode(this.cpf);
-        hash = 97 * hash + Objects.hashCode(this.dataNascimento);
+        hash = 97 * hash + Objects.hashCode(this.nome);
+        hash = 97 * hash + Objects.hashCode(this.sobrenome);
         return hash;
     }
 
@@ -100,7 +121,5 @@ public class Pessoa {
     public String toString() {
         return "Nome: " + getNome() + " " + getSobrenome() + "\nCPF: " + getCpf() + "\nData de Nascimento: " + getDataNascimentoString()+ "\n" + getEndereco() + "\n";
     }
-
-    
     
 }

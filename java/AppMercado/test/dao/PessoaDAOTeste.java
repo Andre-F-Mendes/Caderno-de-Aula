@@ -2,7 +2,7 @@ package dao;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import model.dao.PessoaDAO;
+import persist.PessoaDAO;
 import model.entity.Endereco;
 import model.entity.Pessoa;
 import util.UnidadeFederacao;

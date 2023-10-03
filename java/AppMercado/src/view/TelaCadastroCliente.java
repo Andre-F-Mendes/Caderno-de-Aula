@@ -5,7 +5,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import javax.swing.JOptionPane;
 import javax.swing.text.MaskFormatter;
-import model.dao.ClienteDAO;
+import persist.ClienteDAO;
 import model.entity.Cliente;
 import model.entity.Endereco;
 import util.UnidadeFederacao;

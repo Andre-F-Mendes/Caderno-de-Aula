@@ -1,4 +1,4 @@
-package model.entity;
+package entity;
 
 import java.util.Objects;
 import util.UnidadeFederacao;
@@ -105,11 +105,7 @@ public class Endereco {
     }
 
     @Override
-<<<<<<< HEAD
-    public boolean equals(Object obj){
-=======
     public boolean equals(Object obj) {
->>>>>>> b01d3cf07bdf76aaeaf8af154f0102802f0f81eb
         if(this == obj){
             return true;
         }
