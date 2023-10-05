@@ -8,7 +8,7 @@ import util.UnidadeFederacao;
  * @author andre
  */
 public class Endereco {
-    private String nome, pais,cidade, bairro, rua;
+    private String complemento, pais,cidade, bairro, rua;
     private int numero;
     private UnidadeFederacao estado;
     
@@ -16,8 +16,8 @@ public class Endereco {
         
     }
 
-    public Endereco(String nome, String pais, String cidade, String bairro, String rua, int numero, UnidadeFederacao estado) {
-        setNome(nome);
+    public Endereco(String complemento, String pais, String cidade, String bairro, String rua, int numero, UnidadeFederacao estado) {
+        setComplemento(complemento);
         setPais(pais);
         setCidade(cidade);
         setBairro(bairro);
@@ -26,13 +26,13 @@ public class Endereco {
         setEstado(estado);
     }
 
-    public String getNome() {
-        return nome;
+    public String getComplemento() {
+        return complemento;
     }
 
-    public void setNome(String nome) {
-        Objects.requireNonNull(nome);
-        this.nome = nome;
+    public void setComplemento(String complemento) {
+        Objects.requireNonNull(complemento);
+        this.complemento = complemento;
     }
 
     public String getPais() {
@@ -94,7 +94,7 @@ public class Endereco {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 61 * hash + Objects.hashCode(this.nome);
+        hash = 61 * hash + Objects.hashCode(this.complemento);
         hash = 61 * hash + Objects.hashCode(this.pais);
         hash = 61 * hash + Objects.hashCode(this.cidade);
         hash = 61 * hash + Objects.hashCode(this.bairro);
@@ -113,14 +113,13 @@ public class Endereco {
             return false;
         }
         Endereco endereco = (Endereco) obj;
-        return Objects.equals(nome, endereco.nome);
+        return Objects.equals(complemento, endereco.complemento);
     }
 
     @Override
     public String toString() {
-        return "Endereço: " + getNome() +
-                "\nPais: " + getPais() + "\nEstado: " + getEstado() +
+        return "\nPais: " + getPais() + "\nEstado: " + getEstado() +
                 "\nCidade: " + getCidade() + "\nBairro: " + getBairro() +
-                "\nRua: " + getRua() + "\nNúmero: " + getNumero();
+                "\nRua: " + getRua() + "\nNúmero: " + getNumero() + "\nComplemento: " + getComplemento();
     }
 }
