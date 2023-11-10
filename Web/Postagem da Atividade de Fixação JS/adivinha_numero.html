@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advinhador de Números</title>
+    <script>
+        function adivinhar() {
+            let min = 0, max = 25, num;
+
+            while (max - min != 1) {
+                num = Math.trunc((max - min) / 2 + min);
+                if (confirm("Seu número é menor que " + num + "?")) {
+                    max = Math.trunc(num);
+                } else {
+                    min = Math.trunc(num);
+                }
+            }
+            while (document.getElementById("msg").hasChildNodes()) {
+                var c = msg.firstChild;
+                msg.removeChild(c);
+            }
+            tn = document.createTextNode( "Seu número é: " + min );
+            msg.appendChild( tn );
+        }
+    </script>
+</head>
+
+<body>
+
+    <p id="msg">Pensa em um numero de 0 a 25
+        <br>
+        <input type="button" id="botao" value="Continuar" onclick="adivinhar()">
+    </p>
+
+</body>
+
+</html>
