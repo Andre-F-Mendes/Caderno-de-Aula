@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade de Programação JS (Parte 1)</title>
+</head>
+
+<body>
+    <input type="number" name="idade" id="idade" placeholder="Informe sua idade aqui" min="1"><br>
+    <button onclick="verificarIdade()">ENVIAR</button>
+
+    <script>
+        function verificarIdade() {
+            let idade = document.getElementById('idade').value;
+
+            idade = parseInt(idade);
+
+            if (idade < 16) {
+                window.alert("Não pode entrar no evento.");
+            } else if (idade >= 16 && idade < 18) {
+                window.alert("Pode entrar no evento, porém não pode beber.");
+            } else if (idade >= 18) {
+                window.alert("Pode entrar no evento e beber.");
+                window.alert("Se beber não dirija!");
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -4,7 +4,13 @@
     // Para obter mais informações, acesse: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-    
+        {
+            "type": "java",
+            "name": "toLowerCase",
+            "request": "launch",
+            "mainClass": "toLowerCase",
+            "projectName": "Caderno_d98aa0b4"
+        },
         {
             "type": "node",
             "request": "launch",
