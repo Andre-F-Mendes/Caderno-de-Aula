@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ParidadeSimples",
+            "request": "launch",
+            "mainClass": "ParidadeSimples",
+            "projectName": "Caderno_98725ba9"
+        },
+        {
+            "type": "java",
             "name": "toLowerCase",
             "request": "launch",
             "mainClass": "toLowerCase",
