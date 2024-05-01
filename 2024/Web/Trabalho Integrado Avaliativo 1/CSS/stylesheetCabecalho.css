@@ -1,0 +1,60 @@
+body{
+    background-color: rgb(146, 181, 214);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;  
+}
+
+
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    place-items: center;
+    font-size: x-large; 
+    border: 3px solid rgb(117, 141, 174); 
+    background-color: rgb(34, 96, 147);
+    width: 99.7%;
+    /* position: fixed;
+    top: 0; */
+    }
+    
+    .cabecalho-div1 { grid-area: 1 / 1 / 3 / 7; 
+        width: 100%; height: 100%; 
+        border-bottom: 3px solid rgb(136, 163, 201); 
+        font-size: xxx-large; 
+        display: grid; place-items: center;
+    }
+    .cabecalho-div2 { grid-area: 3 / 1 / 4 / 2; }
+    .cabecalho-div3 { grid-area: 3 / 2 / 4 / 3; }
+    .cabecalho-div4 { grid-area: 3 / 3 / 4 / 4; }
+    .cabecalho-div5 { grid-area: 3 / 4 / 4 / 5; }
+    .cabecalho-div6 { grid-area: 3 / 5 / 4 / 6; }
+    .cabecalho-div7 { grid-area: 3 / 6 / 4 / 7; }
+
+    .cabecalho-div2, .cabecalho-div3, .cabecalho-div4, .cabecalho-div5, .cabecalho-div6{
+        font-size: xx-large; 
+        width: 100%;
+        height: 100%;
+        display: grid;
+        place-items: center;
+        border-left: 2px solid rgba(117, 141, 174);
+        border-right: 2px solid rgb(117, 141, 174);
+    } 
+    .cabecalho-div2:hover, .cabecalho-div3:hover, .cabecalho-div4:hover, .cabecalho-div5:hover, .cabecalho-div6:hover{
+        background-color: rgb(29, 82, 125);
+    } 
+    
+    .parent a{
+        color: white;  
+        text-decoration: none;
+        width: 99%;
+        height: 100%;
+        cursor: pointer;
+        border-top: 2px solid rgba(117, 141, 174);
+        border-bottom: 2px solid rgb(117, 141, 174);
+    }
+
+    
